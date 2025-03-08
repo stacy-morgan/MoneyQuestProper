@@ -18,12 +18,14 @@ image bg college = "bg/College.jpeg"
 image bg stocks_up = "bg/StocksGoUp.jpeg"
 image bg stocks_down = "bg/StocksGoDown.jpeg"
 image bg LearnToCode = "bg/LearnToCode.jpeg"
+image bg graduation = "bg/Graduation.jpeg"
+image bg broke_art_room = "bg/BrokeArtRoom.jpeg"
 image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 image character oldlily = "chars/OldLily.png"
 
 default major = ""
-default money = 150000
+default money = 0
 default year = 2025
 default job = "none"
 default house = False
@@ -39,7 +41,8 @@ label start:
 
     mc "Hii, I'm Lily."
     mc "I just graduated high school."
-    mc "I recently inherited a large amount of money from my great aunt."
+    $ money = 50000
+    mc "I recently inherited a large amount of money from my great aunt. (+$50,000)"
     mc "What should I do with it?"
     # jump buy_car
 
@@ -54,7 +57,7 @@ label choice1:
             jump get_job
 
         "Bachelor's Degree":
-            jump bachelors
+            jump degree
 
         "Retire":
             jump retirement

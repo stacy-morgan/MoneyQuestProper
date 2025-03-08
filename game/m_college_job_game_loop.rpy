@@ -1,21 +1,25 @@
 label cs_job:
-    "You're homeless now"
+    "You're homeless now."
     jump end
 
 label art_job:
+    mc "I really want to make art now, but I'm worried that I won't make enough money to pay for an apartment."
     menu:
-        "What job do you want?"
+        mc "Should I get a job at WcBonalds to make some money or put my full focus on my art?"
 
-        "Get a job at WcBonalds":
+        "Work at WcBonalds":
             jump get_job
         "Try to be an artist":
             jump art_2
 
 label art_2:
-    mc "I've been making art for 10 years now and I'm broke."
+    show bg broke_art_room
+    show character lily
+    mc "I've been making art for 6 months now and I'm totally out of money."
+    mc "Since art is not working out, it looks like I only have two options,"
 
     menu:
-        "What should I do?"
+        mc "What should I do?"
 
         "Get a job at WcBonalds":
             jump get_job
@@ -28,6 +32,7 @@ label suck_feet:
     jump end
 
 label aerospace_job:
+    mc "I heard that as an [major] major, I can work on planes or rockets!"
     menu:
         "What job do you want?"
 

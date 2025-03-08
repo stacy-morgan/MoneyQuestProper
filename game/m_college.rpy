@@ -1,7 +1,9 @@
 label degree:
-    mc "I need to apply to colleges now, but before that I need to choose a major."
+    mc "If I'm going to college I need to choose my major."
+    mc "I've heard that you can make a lot of money with a Computer Science or Aerospace Engineering degree,"
+    mc "But I've always had a passion for doing art."
     menu:
-        "Choose a major"
+        mc "What major should I apply for?"
 
         "Computer Science":
             $ major = "Computer Science"
@@ -9,7 +11,7 @@ label degree:
             $ major = "Liberal Arts"
         "Aerospace Engineering":
             $ major = "Aerospace Engineering"
-    mc "Now I need to apply to colleges."
+    mc "Now I need to apply to colleges..."
 
     scene black with fade
     pause 1.0
@@ -31,18 +33,17 @@ label degree:
     show text "A few years later..." with dissolve
     pause 2.0
 
-    show bg college
-    show character lily
+    show bg graduation
     mc "I can't believe I'm graduating already. What will I do with my [major] degree?"
+
+    show character lily
 
     if major == "Computer Science":
         mc "I should probably get a job at a top tech company."
         jump cs_job
     elif major == "Liberal Arts":
-        mc "I'm not really sure what to do with this degree, maybe I'll have to work at WcBonalds."
         jump art_job
     elif major == "Aerospace Engineering":
-        mc "I heard that as an [major] major, I can work on planes or rockets!"
         jump aerospace_job
 
     mc "I guess I should probably get a job."
