@@ -17,8 +17,10 @@ image bg home = "bg/Home.jpeg"
 image bg college = "bg/College.jpeg"
 image bg stocks_up = "bg/StocksGoUp.jpeg"
 image bg stocks_down = "bg/StocksGoDown.jpeg"
+image bg LearnToCode = "bg/LearnToCode.jpeg"
 image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
+image character oldlily = "chars/OldLily.png"
 
 default major = ""
 default money = 150000
