@@ -20,19 +20,18 @@ label start:
     # These display lines of dialogue.
 
     mc "I am fresh out of high school. What will I do?"
-    jump label choice1
+    jump choice1
 
-    menu:
-        "What should I do?"
+    label choice1:
+        menu:
+            "Buy a car":
+                jump buy_car
 
-        "Buy a car":
-            jump buy_car
+            "Get a job":
+                jump get_job
 
-        "Get a job":
-            jump get_job
-
-        "Bachelor's Degree":
-            jump bachelors
+            "Bachelor's Degree":
+                jump bachelors
     
     label buy_car:
         "My grandpa gave me a car..."
@@ -64,13 +63,14 @@ label start:
                 jump wcd_chef_job_interview
 
     label wcd_janitor_job_interview:
-        "What do you get when you mix ammonia and bleach?"
+        menu:
+            "What do you get when you mix ammonia and bleach?"
 
-        "A) Mustard gas.":
-            jump jji_a
+            "A) Mustard gas.":
+                jump jji_a
 
-        "B) A very strong soap":
-            jump jji_b
+            "B) A very strong soap":
+                jump jji_b
 
     label jji_a:
         "Unformtunately, I didn't get the job,"
@@ -78,7 +78,7 @@ label start:
         "I guess Mr. White wasn't the best teacher..."
         "Well, there's nothing I can do besides trying again."
 
-    scene bg room with transition wiperight
+    scene bg room
     jump get_job
         
     label wcd_chef_job:

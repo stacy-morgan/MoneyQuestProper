@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 31: end of line expected.
-    jump label choice1
-               ^
+File "game/script.rpy", line 83: end of line expected.
+    scene bg room with transition wiperight
+                                  ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Fri Mar  7 22:03:34 2025
+Fri Mar  7 22:25:43 2025
