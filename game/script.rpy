@@ -11,6 +11,8 @@ image bg porsche = "Porsche.jpeg"
 image bg atm = "BrokeAhh.jpeg"
 image bg mcd = "McD.jpeg"
 
+image character animegirl = "AnimeGirl.png"
+
 # The game starts here.
 
 label start:
@@ -44,10 +46,12 @@ label start:
         "I am going to get no girls with this car."
         "I'm going to get something fancy! I've heard that you can get a really fancy car for around this price."
         scene bg porsche
+        with wipeleft
         "Time to get a fancy Porsche to flex my wealth!" 
         $ money -= 50000
         mc "I just bought a car!"
         scene bg atm
+        with dissolve
         mc "But now my wallet is empty..."
         jump broke_ass_bitch
 
@@ -101,7 +105,6 @@ label start:
     label wcd_chef_job_game_loop:
         "I am a chef now. I am making $16.50 an hour."
         "Yippee!"
-        ""
 
 label end:
     return
