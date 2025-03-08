@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 52, in script
+    jump end
+ScriptError: could not find label 'end'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 52, in script
+    jump end
+  File "/Users/ben/Desktop/All/renpy-8.3.6-sdk/renpy/ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/ben/Desktop/All/renpy-8.3.6-sdk/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'end'.
+
+macOS-15.0.1-arm64-arm-64bit arm64
+Ren'Py 8.3.6.25022803
+MoneyQuest 1.0
+Fri Mar  7 22:31:14 2025

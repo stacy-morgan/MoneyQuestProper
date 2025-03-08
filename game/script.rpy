@@ -6,13 +6,14 @@
 define e = Character("Eileen")
 define mc = Character("Player")
 
-$ money = 50000
-$ year = 2025
-$ job = "unused"
+image bg nissan = "Nissan.jpeg"
 
 # The game starts here.
 
 label start:
+    $ money = 50000
+    $ year = 2025
+    $ job = "unused"
 
     scene bg room
     show eileen happy
@@ -34,12 +35,12 @@ label start:
                 jump bachelors
     
     label buy_car:
+        scene bg nissan
         "My grandpa gave me a car..."
         "But it's so ugly."
         "I am going to get no girls with this car."
         "I'm going to get something fancy! I've heard that you can get a really fancy car for around this price."
         "Time to get a fancy Porsche to flex my wealth!" 
-        scene bg porsche
         $ money -= 50000
         mc "I just bought a car!"
         mc "But now my wallet is empty..."
@@ -94,4 +95,6 @@ label start:
         "I am a chef now. I am making $16.50 an hour."
         "Yippee."
 
+label end:
     return
+return
