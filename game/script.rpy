@@ -3,13 +3,17 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define e = Character("Eilieen")
+define mcdInt = Character("Eilieen")
+define qqq = Character("???")
+
 define mc = Character("Player")
 
 image bg nissan = "Nissan.jpeg"
 image bg porsche = "Porsche.jpeg"
 image bg atm = "BrokeAhh.jpeg"
 image bg mcd = "McD.jpeg"
+image bg home = "Home.jpeg"
 
 image character animegirl = "AnimeGirl.png"
 
@@ -75,7 +79,9 @@ label start:
 
     label wcd_janitor_job_interview:
         menu:
-            "What do you get when you mix ammonia and bleach?"
+            qqq "Hi, I'm Eileen! I'll be interviewing you today."
+            e "The question is..."
+            e "What do you get when you mix ammonia and bleach?"
 
             "A) Mustard gas.":
                 jump jji_a
@@ -84,13 +90,19 @@ label start:
                 jump jji_b
 
     label jji_a:
-        "Unformtunately, I didn't get the job,"
+        e "Ok, thank god."
+        e "We had an... incident regarding cleaning supplies at our previous location."
+        e "As you know, it does not exist anymore. It was a biohazard."
+        e "You're hired."
+
+    label jji_b:
+        e "That's... not true. Unforunately, we will not proceed with your hiring at this time."
+        "Aw man, I didn't get the job,"
         "They said I had to \'go back to high school chemistry\' or something."
         "I guess Mr. White wasn't the best teacher..."
         "Well, there's nothing I can do besides trying again."
-
-    scene bg room
-    jump get_job
+        scene bg room
+        jump get_job
         
     label wcd_chef_job:
         "I got the job."
