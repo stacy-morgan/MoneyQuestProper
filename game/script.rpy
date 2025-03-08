@@ -19,6 +19,7 @@ image bg stocks_up = "bg/StocksGoUp.jpeg"
 image bg stocks_down = "bg/StocksGoDown.jpeg"
 image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
+image character oldlily = "chars/OldLily.png"
 
 default major = ""
 default money = 50000
