@@ -13,9 +13,12 @@ image bg porsche = "Porsche.jpeg"
 image bg atm = "BrokeAhh.jpeg"
 image bg mcd = "McD.jpeg"
 image bg home = "Home.jpeg"
+image bg college = "College.jpeg"
 
 image character eileen = "AnimeGirl.png"
 image character lily = "Lily.png"
+
+default major = ""
 
 # The game starts here.
 
