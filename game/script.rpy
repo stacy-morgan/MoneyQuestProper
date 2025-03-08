@@ -7,22 +7,14 @@ define e = Character("Eileen")
 define mc = Character("Player")
 
 $ money = 50000
-
+$ year = 2025
+$ job = "unused"
 
 # The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
     show eileen happy
 
     # These display lines of dialogue.
@@ -43,9 +35,15 @@ label start:
             jump bachelors
     
     label buy_car:
-        scene bg lamborghini
+        "My grandpa gave me a car..."
+        "But it's so ugly."
+        "I am going to get no girls with this car."
+        "I'm going to get something fancy! I've heard that you can get a really fancy car for around this price."
+        "Time to get a fancy Porsche to flex my wealth!" 
+        scene bg porsche
         $ money -= 50000
         mc "I just bought a car!"
+        mc "But now my wallet is empty..."
         jump broke_ass_bitch
 
     label  broke_ass_bitch:
@@ -60,9 +58,28 @@ label start:
         mc "But a chef would probably have more promotional opportunities."
         menu:
             "Janitor ($16.50/yr, $34,320/yr)":
-                jump wcd_chef_job_interview
+                jump wcd_janitor_job_interview
+
             "WcDonald's Chef":
                 jump wcd_chef_job_interview
+
+    label wcd_janitor_job_interview:
+        "What do you get when you mix ammonia and bleach?"
+
+        "A) Mustard gas.":
+            jump jji_a
+
+        "B) A very strong soap":
+            jump jji_b
+
+    label jji_a:
+        "Unformtunately, I didn't get the job,"
+        "They said I had to \'go back to high school chemistry\' or something."
+        "I guess Mr. White wasn't the best teacher..."
+        "Well, there's nothing I can do besides trying again."
+
+    scene bg room with transition wiperight
+    jump get_job
         
     label wcd_chef_job:
         "I got the job."
@@ -75,7 +92,6 @@ label start:
 
     label wcd_chef_job_game_loop:
         "I am a chef now. I am making $16.50 an hour."
-
-        
+        "Yippee."
 
     return
