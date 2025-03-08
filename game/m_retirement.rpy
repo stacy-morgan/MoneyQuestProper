@@ -3,8 +3,7 @@ label retirement:
     mc "Man I've feel like it's time to retire!"
     if money < 10000:
         jump retireChoice   
-    elif money > 10000 and money < 100000:
-        if 
+    # elif money > 10000 and money < 100000:
 
 label retireLess10000:
     mc "Nuts, I should have taken some more care with saving money when I had the chance!"
