@@ -88,13 +88,17 @@ label probability_learn_skills:
         pause 2.0
         show text "You have no success in finding a job with your new skills." with dissolve
         pause 2.0
+        show text "You return to your normal hours." with dissolve
+        pause 2.0
+        show text "On the bright side, you got promoted and are now making $13,440 after expenses." with dissolve
+        jump conclusion
     else:
         pause 2.0
         show text "You found a new job with your new skills." with dissolve
         pause 2.0
-        who text "You are now making $18,740 after expenses." with dissolve
+        show text "You are now making $18,740 after expenses." with dissolve
         pause 2.0
-    jump end
+        jump conclusion
 
 label probability_social_media:
     $ import random
@@ -107,13 +111,49 @@ label probability_social_media:
         pause 2.0
         show text "You have no success in becoming a social media influencer." with dissolve
         pause 2.0
+        show text "You return to your normal hours." with dissolve
+        pause 2.0
+        show text "On the bright side, you got promoted and are now making $13,440 after expenses." with dissolve
+        pause 2.0
+        jump conclusion
     else:
         pause 2.0
         show text "You have become a successful social media influencer." with dissolve
         pause 2.0
         show text "You are now making $17,740 after expenses." with dissolve
         pause 2.0
-    jump end
+        jump conclusion
 
 label conclusion:
-    mc "I made some money but I am still poor."
+    scene bg home
+    with dissolve
+    mc "I made some money but I am still not making enough."
+    mc "I want to make a decision between saving my hard earned money or spending it."
+    menu:
+        "Save money":
+            jump emergency
+        "Upgrade lifestyle (Expenses: $30k a year)":
+            jump consequence
+
+label emergency:
+    scene bg hospital
+    with dissolve
+    mc "I got into a car accident."
+    mc "I saved my money for a rainy day and was able to pay for my hospital bills."
+    "Inflation went up by 10%..."
+    scene bg black with fade
+    pause 1.0
+    "Retirement"
+    pause 2.0
+    jump retirement
+
+label consequence:
+    scene bg mansion with fade
+    mc "I spent all my money on a new lifestyle."
+    mc "I have barely any money to spend now."
+    scene bg black
+    with fade
+    pause 1.0
+    "Retirement"
+    pause 2.0
+    jump retirement
