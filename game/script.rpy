@@ -8,6 +8,8 @@ define mc = Character("Player")
 
 image bg nissan = "Nissan.jpeg"
 image bg porsche = "Porsche.jpeg"
+image bg atm = "BrokeAhh.jpeg"
+image bg mcd = "McD.jpeg"
 
 # The game starts here.
 
@@ -45,6 +47,7 @@ label start:
         "Time to get a fancy Porsche to flex my wealth!" 
         $ money -= 50000
         mc "I just bought a car!"
+        scene bg atm
         mc "But now my wallet is empty..."
         jump broke_ass_bitch
 
@@ -56,6 +59,7 @@ label start:
     label get_job:
         mc "Without a college degree, there's only so much I can do."
         mc "The local WcDonald's is hiring..."
+        scene bg mcd
         mc "I could get a job as a janitor, or as a regular cook."
         mc "But a chef would probably have more promotional opportunities."
         menu:
@@ -91,11 +95,13 @@ label start:
 
     label wcd_janitor_job:
         "I got the job."
+        $ yrs_until_promotion = 2
         jump wcd_janitor_gameloop
 
     label wcd_chef_job_game_loop:
         "I am a chef now. I am making $16.50 an hour."
         "Yippee!"
+        ""
 
 label end:
     return
