@@ -33,20 +33,23 @@ label start:
     mc "I just graduated high school."
     mc "I recently inherited a large amount of money from my great aunt."
     mc "What should I do with it?"
-    jump buy_car
+    # jump buy_car
 
-    # jump choice1
+    jump choice1
 
-# label choice1:
-#     menu:
-#         "Buy a car":
-#             jump buy_car
+label choice1:
+    menu:
+        "Buy a car":
+            jump buy_car
 
-#         "Get a job":
-#             jump get_job
+        "Get a job":
+            jump get_job
 
-#         "Bachelor's Degree":
-#             jump bachelors
+        "Bachelor's Degree":
+            jump bachelors
+
+        "Retire":
+            jump retirement
 
 label broke_ass_bitch:
     mc "I am out of money!"
