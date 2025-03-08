@@ -14,7 +14,8 @@ label get_job:
             jump wcb_chef_job_interview
 
 label wcb_janitor_job_interview:
-    show character eileen
+    show character animegirl:
+        xpos 0.5  ypos 0
     qqq "Hi, I'm Eileen! I'll be interviewing you today."
     e "The question is..."
     menu:
@@ -27,6 +28,19 @@ label wcb_janitor_job_interview:
             jump jji_b
 
 label jji_a:
+    hide character animegirl
+    show character animegirl:
+        xpos 0.5  ypos 0
+        yoffset 0
+        easein 0.25 yoffset -100
+        easeout 0.25 yoffset 0
+        easein 0.2 yoffset -30
+        easeout 0.2 yoffset 0
+        easein 0.15 yoffset -10
+        easeout 0.15 yoffset 0
+        easein 0.1 yoffset -4
+        easeout 0.1 yoffset 0
+    e "MUSTAAAAAAAAAAARD!!!!!!"
     e "Ok, thank god."
     e "We had an... incident regarding cleaning supplies at our previous location."
     e "As you know, it does not exist anymore. It was a biohazard."

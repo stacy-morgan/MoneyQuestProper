@@ -8,6 +8,7 @@ define qqq = Character("???")
 
 define mc = Character("Lily")
 
+define held_stocks = []
 image bg nissan = "bg/Nissan.jpeg"
 image bg porsche = "bg/Porsche.jpeg"
 image bg atm = "bg/BrokeAhh.jpeg"
@@ -16,7 +17,7 @@ image bg home = "bg/Home.jpeg"
 image bg college = "bg/College.jpeg"
 image bg stocks_up = "bg/StocksGoUp.jpeg"
 image bg stocks_down = "bg/StocksGoDown.jpeg"
-image character eileen = "chars/AnimeGirl.png"
+image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 
 default major = ""
