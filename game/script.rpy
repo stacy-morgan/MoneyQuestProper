@@ -20,13 +20,13 @@ image character eileen = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 
 default major = ""
+default money = 50000
+default year = 2025
+default job = "none"
 
 # The game starts here.
 
 label start:
-    $ money = 50000
-    $ year = 2025
-    $ job = "none"
 
     scene bg home
     show lily

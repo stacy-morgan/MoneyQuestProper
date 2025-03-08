@@ -1,8 +1,9 @@
 label get_job:
-    mc "Without a college degree, there's only so much I can do."
-    mc "The local WcBonald's is hiring..."
-    scene bg mcd
-    # show character lily
+    if job == "":
+        mc "Without a college degree, there's only so much I can do."
+        mc "The local WcBonald's is hiring..."
+
+    scene bg mcb
     mc "I could get a job as a janitor, or as a regular cook."
     mc "But a chef would probably have more promotional opportunities."
     menu:

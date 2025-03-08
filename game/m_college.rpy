@@ -39,7 +39,7 @@ label degree:
         mc "I should probably get a job at a top tech company."
         jump cs_job
     elif major == "Liberal Arts":
-        mc "I'm not really sure what to do with this degree, maybe I'll have to work at WcDonalds."
+        mc "I'm not really sure what to do with this degree, maybe I'll have to work at WcBonalds."
         jump art_job
     elif major == "Aerospace Engineering":
         mc "I heard that as an [major] major, I can work on planes or rockets!"
