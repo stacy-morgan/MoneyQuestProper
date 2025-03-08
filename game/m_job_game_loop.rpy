@@ -19,27 +19,38 @@ label wcb_janitor_game_loop:
     jump expenses_janitor
 
 label expenses_janitor:
-    
-    "One year has passed..."
-    "Yearly savings: $34,320"
-    "Yearly expenses: $24,000" 
-    "Remaining savings: $10,320"
+    scene black with fade
+    pause 1.0
+    show text "One year has passed..." with dissolve
+    pause 2.0
+    show text "Yearly savings: $34,320" with dissolve
+    pause 2.0
+    show text "Yearly expenses: $24,000" with dissolve
+    pause 2.0
+    show text "Remaining savings: $10,320" with dissolve
     jump summary_janitor
 
 label expenses_chef:
-    "One year has passed..." 
-    "Yearly savings: $41,600" 
-    "Yearly expenses: $24,000" 
-    "Remaining savings: $17,600"
+    scene black with fade
+    pause 1.0
+    show text "One year has passed..." with dissolve
+    pause 2.0
+    show text "Yearly savings: $41,600" with dissolve
+    pause 2.0
+    whoe text "Yearly expenses: $24,000" with dissolve
+    pause 2.0
+    show text "Remaining savings: $17,600" with dissolve
     jump end
 
 label summary_janitor:
+    pause 1.0
+    show bg home
     "You make approximately $10k a year, which is not ideal."
     "Would you like to get do a side hobby?"
     menu:
-        "Learn high-paying skills (Take time off job)":
+        "Learn high-paying skills (Take some time off job)":
             jump learn_skills
-        "Start career on social media (Take time off job)":
+        "Start career on social media (Take some time off job)":
             jump social_media
         "Continue working":
             jump expenses_janitor_keep
@@ -49,13 +60,15 @@ label learn_skills:
     with dissolve
     "You have learned high-paying skills."
     "However, it took a couple hours off your job."
-    "Your new yealy earnings is $6,030."
+    "Your new yealy earnings is $6,030 after expenses."
     jump probability_learn_skills
 
 label social_media:
+    scene bg social_media
+    with dissolve
     "You have try to become a social media influencer."
     "However, it took a couple hours off your job."
-    "Your new yealy earnings is $6,030."
+    "Your new yealy earnings is $6,030 after expenses."
     jump probability_social_media
 
 label expenses_janitor_keep:
