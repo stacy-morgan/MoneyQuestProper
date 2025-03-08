@@ -21,9 +21,10 @@ image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 
 default major = ""
-default money = 50000
+default money = 150000
 default year = 2025
 default job = "none"
+default house = False
 
 # The game starts here.
 
