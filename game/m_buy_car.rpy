@@ -32,7 +32,7 @@ label no_car:
     mc "Now I have all this money, if I'm not going to buy a car, what should I do with it??"
     mc "Hmm... I could go to college, or maybe put it in the stock market."
     menu:
-        "Get a Bachelors Degree":
+        "Get a Bachelor's degree":
             jump degree
         "Invest the money":
             jump invest
