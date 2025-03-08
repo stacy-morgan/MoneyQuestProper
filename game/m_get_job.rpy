@@ -42,5 +42,5 @@ label jji_b:
     jump get_job
 
 label wcd_chef_job_interview:
-    "Not coded yet..."
+    e "Hi, I'm Eileen! I'll be interviewing you today."
     jump end
