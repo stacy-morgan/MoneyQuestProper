@@ -28,6 +28,7 @@ label expenses_janitor:
     show text "Yearly expenses: $24,000" with dissolve
     pause 2.0
     show text "Remaining savings: $10,320" with dissolve
+    pause 2.0
     jump summary_janitor
 
 label expenses_chef:
@@ -40,17 +41,18 @@ label expenses_chef:
     whoe text "Yearly expenses: $24,000" with dissolve
     pause 2.0
     show text "Remaining savings: $17,600" with dissolve
+    pause 2.0
     jump end
 
 label summary_janitor:
     pause 1.0
     show bg home
     "You make approximately $10k a year, which is not ideal."
-    "Would you like to get do a side hobby?"
+    "Would you like to get a side hobby?"
     menu:
-        "Learn high-paying skills (Take some time off job)":
+        "Learn high-paying skills (Work 5 hours less)":
             jump learn_skills
-        "Start career on social media (Take some time off job)":
+        "Start career on social media (Work 5 hours less)":
             jump social_media
         "Continue working":
             jump expenses_janitor_keep
@@ -60,15 +62,15 @@ label learn_skills:
     with dissolve
     "You have learned high-paying skills."
     "However, it took a couple hours off your job."
-    "Your new yealy earnings is $6,030 after expenses."
+    "Your new yearly earnings is $6,030 after expenses."
     jump probability_learn_skills
 
 label social_media:
-    scene bg social_media
+    scene bg SocialMedia
     with dissolve
     "You have try to become a social media influencer."
     "However, it took a couple hours off your job."
-    "Your new yealy earnings is $6,030 after expenses."
+    "Your new yearly earnings is $6,030 after expenses."
     jump probability_social_media
 
 label expenses_janitor_keep:
@@ -79,22 +81,38 @@ label probability_learn_skills:
     $ import random
     $ chance = random.random()
 
+    scene black with fade
+    pause 1.0
+    show text "Another year has passed..." with dissolve
     if chance < 0.5:  
-        "You have no success in finding a job with your new skills."
+        pause 2.0
+        show text "You have no success in finding a job with your new skills." with dissolve
+        pause 2.0
     else:
-        "You found a new job with your new skills."
-        "You are now making $18,740 after expenses."
+        pause 2.0
+        show text "You found a new job with your new skills." with dissolve
+        pause 2.0
+        who text "You are now making $18,740 after expenses." with dissolve
+        pause 2.0
     jump end
 
 label probability_social_media:
     $ import random
     $ chance = random.random()
 
+    scene black with fade
+    pause 1.0
+    show text "Another year has passed..." with dissolve
     if chance < 0.5:  
-        "You have no success in becoming a social media influencer."
+        pause 2.0
+        show text "You have no success in becoming a social media influencer." with dissolve
+        pause 2.0
     else:
-        "You have become a successful social media influencer."
-        "You are now making $17,740 after expenses."
+        pause 2.0
+        show text "You have become a successful social media influencer." with dissolve
+        pause 2.0
+        show text "You are now making $17,740 after expenses." with dissolve
+        pause 2.0
     jump end
 
 label conclusion:
