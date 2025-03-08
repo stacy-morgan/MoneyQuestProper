@@ -352,7 +352,8 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    # add gui.main_menu_background
+    add "bg/MoneyTree.jpeg"
 
     ## This empty frame darkens the main menu.
     frame:
