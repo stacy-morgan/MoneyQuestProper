@@ -6,10 +6,10 @@ label get_job:
     mc "I could get a job as a janitor, or as a regular cook."
     mc "But a chef would probably have more promotional opportunities."
     menu:
-        "Janitor ($16.50/hr, $34,320/yr)":
+        "Janitor":
             jump wcd_janitor_job_interview
 
-        "WcDonald's Chef ($20.00/hr, $41,600/yr)":
+        "WcDonald's Chef":
             jump wcd_chef_job_interview
 
 label wcd_janitor_job_interview:
