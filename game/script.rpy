@@ -8,15 +8,16 @@ define qqq = Character("???")
 
 define mc = Character("Lily")
 
-image bg nissan = "Nissan.jpeg"
-image bg porsche = "Porsche.jpeg"
-image bg atm = "BrokeAhh.jpeg"
-image bg mcd = "McD.jpeg"
-image bg home = "Home.jpeg"
-image bg college = "College.jpeg"
-
-image character eileen = "AnimeGirl.png"
-image character lily = "Lily.png"
+image bg nissan = "bg/Nissan.jpeg"
+image bg porsche = "bg/Porsche.jpeg"
+image bg atm = "bg/BrokeAhh.jpeg"
+image bg mcd = "bg/McD.jpeg"
+image bg home = "bg/Home.jpeg"
+image bg college = "bg/College.jpeg"
+image bg stocks_up = "bg/StocksGoUp.jpeg"
+image bg stocks_down = "bg/StocksGoDown.jpeg"
+image character eileen = "chars/AnimeGirl.png"
+image character lily = "chars/Lily.png"
 
 default major = ""
 
