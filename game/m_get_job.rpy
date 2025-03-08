@@ -1,18 +1,18 @@
 label get_job:
     mc "Without a college degree, there's only so much I can do."
-    mc "The local WcDonald's is hiring..."
+    mc "The local WcBonald's is hiring..."
     scene bg mcd
     # show character lily
     mc "I could get a job as a janitor, or as a regular cook."
     mc "But a chef would probably have more promotional opportunities."
     menu:
         "Janitor":
-            jump wcd_janitor_job_interview
+            jump wcb_janitor_job_interview
 
         "WcDonald's Chef":
-            jump wcd_chef_job_interview
+            jump wcb_chef_job_interview
 
-label wcd_janitor_job_interview:
+label wcb_janitor_job_interview:
     show character eileen
     qqq "Hi, I'm Eileen! I'll be interviewing you today."
     e "The question is..."
@@ -30,7 +30,7 @@ label jji_a:
     e "We had an... incident regarding cleaning supplies at our previous location."
     e "As you know, it does not exist anymore. It was a biohazard."
     e "You're hired."
-    jump wcd_janitor_game_loop
+    jump wcb_janitor_game_loop
 
 label jji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
@@ -41,6 +41,6 @@ label jji_b:
     mc "Well, there's nothing I can do besides trying again."
     jump get_job
 
-label wcd_chef_job_interview:
+label wcb_chef_job_interview:
     e "Hi, I'm Eileen! I'll be interviewing you today."
     jump end
