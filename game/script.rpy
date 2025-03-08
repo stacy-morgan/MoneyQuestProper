@@ -3,11 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eilieen")
-define mcdInt = Character("Eilieen")
+define e = Character("Eileen")
 define qqq = Character("???")
 
-define mc = Character("Player")
+define mc = Character("Lily")
 
 image bg nissan = "Nissan.jpeg"
 image bg porsche = "Porsche.jpeg"
@@ -15,21 +14,27 @@ image bg atm = "BrokeAhh.jpeg"
 image bg mcd = "McD.jpeg"
 image bg home = "Home.jpeg"
 
-image character animegirl = "AnimeGirl.png"
+image character eileen = "AnimeGirl.png"
+image character lily = "Lily.png"
 
 # The game starts here.
 
 label start:
     $ money = 50000
     $ year = 2025
-    $ job = "unused"
+    $ job = "none"
 
-    scene bg room
-    show eileen happy
+    scene bg home
+    show lily
 
     # These display lines of dialogue.
 
-    mc "I am fresh out of high school. What will I do?"
+    mc "Hii, I'm Lily."
+    mc "I just graduated high school."
+    mc "I recently inherited a large amount of money from my great aunt."
+    mc "What should I do with it?"
+    jump buy_car
+
     jump choice1
 
     label choice1:
@@ -45,21 +50,48 @@ label start:
     
     label buy_car:
         scene bg nissan
-        "My grandpa gave me a car..."
-        "But it's so ugly."
-        "I am going to get no girls with this car."
-        "I'm going to get something fancy! I've heard that you can get a really fancy car for around this price."
+        mc "My grandpa gave me a car..."
+        mc "But it's so ugly."
+        mc "I am going to get no girls with this car."
+        mc "I want to get something fancy! I've heard that you can get a really fancy car for around this price."
         scene bg porsche
         with wipeleft
-        "Time to get a fancy Porsche to flex my wealth!" 
+        mc "I really want this fancy Porsche to flex my wealth!"
+        mc "But I don't know if it's the best thing to do with this money."
+        menu:
+            "Buy the Porsche (-$50,000)":
+                jump yes_car
+            "Save the money for something more useful":
+                jump no_car
+    
+    label yes_car:
         $ money -= 50000
-        mc "I just bought a car!"
+        mc "This car is so nice! **vroom vroom**"
         scene bg atm
         with dissolve
-        mc "But now my wallet is empty..."
-        jump broke_ass_bitch
+        mc "But now my bank account is empty..."
+        scene bg home
+        show character lily
+        mc "My parents are furious!! Now they are going to kick me out :("
+        mc "They told me to get a job. Ugh!"
+        jump get_job
+    
+    label no_car:
+        scene bg home
+        show character lily
+        mc "Now I have all this money, if I'm not going to buy a car, what should I do with it??"
+        mc "Hmm... I could go to college, or maybe put it in the stock market."
+        menu:
+            "Get a Bachelors Degree":
+                jump degree
+            "Invest the money":
+                jump invest
+    
+    label degree:
+        mc "We still need to write this route uwu."
+        jump end
 
-    label  broke_ass_bitch:
+    label broke_ass_bitch:
         mc "I am out of money!"
         mc "You lose."
         jump end
@@ -68,16 +100,18 @@ label start:
         mc "Without a college degree, there's only so much I can do."
         mc "The local WcDonald's is hiring..."
         scene bg mcd
+        show character lily
         mc "I could get a job as a janitor, or as a regular cook."
         mc "But a chef would probably have more promotional opportunities."
         menu:
-            "Janitor ($16.50/yr, $34,320/yr)":
+            "Janitor ($16.50/hr, $34,320/yr)":
                 jump wcd_janitor_job_interview
 
-            "WcDonald's Chef":
+            "WcDonald's Chef ($20.00/hr, $41,600/yr)":
                 jump wcd_chef_job_interview
 
     label wcd_janitor_job_interview:
+        show character eileen
         qqq "Hi, I'm Eileen! I'll be interviewing you today."
         e "The question is..."
         menu:
@@ -96,7 +130,7 @@ label start:
         e "You're hired."
 
     label jji_b:
-        e "That's... not true. Unforunately, we will not proceed with your hiring at this time."
+        e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
         "Aw man, I didn't get the job,"
         "They said I had to \'go back to high school chemistry\' or something."
         "I guess Mr. White wasn't the best teacher..."

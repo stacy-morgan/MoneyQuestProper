@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 83: Only one say menuitem may exist per menu.
-    qqq "The question is..."
-                            ^
+File "game/script.rpy", line 36: expected statement.
+    money = 50000
+          ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Fri Mar  7 23:05:33 2025
+Sat Mar  8 08:40:11 2025
