@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 83: end of line expected.
-    scene bg room with transition wiperight
-                                  ^
+File "game/script.rpy", line 83: Only one say menuitem may exist per menu.
+    qqq "The question is..."
+                            ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Fri Mar  7 22:25:43 2025
+Fri Mar  7 23:05:33 2025

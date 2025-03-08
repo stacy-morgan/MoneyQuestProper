@@ -78,9 +78,9 @@ label start:
                 jump wcd_chef_job_interview
 
     label wcd_janitor_job_interview:
+        qqq "Hi, I'm Eileen! I'll be interviewing you today."
+        e "The question is..."
         menu:
-            qqq "Hi, I'm Eileen! I'll be interviewing you today."
-            e "The question is..."
             e "What do you get when you mix ammonia and bleach?"
 
             "A) Mustard gas.":
