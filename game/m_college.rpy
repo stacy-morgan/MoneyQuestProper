@@ -18,13 +18,13 @@ label degree:
     show text "A few months later..." with dissolve
     pause 2.0
 
-    show bg home
+    scene bg home
     show character lily
 
     mc "I got accepted to Sigma College!"
     mc "I can't wait to learn [major] there."
 
-    show bg college
+    scene bg college
     show character lily
     mc "It's my first day, I'm so excited!"
 
@@ -33,13 +33,12 @@ label degree:
     show text "A few years later..." with dissolve
     pause 2.0
 
-    show bg graduation
+    scene bg graduation
     mc "I can't believe I'm graduating already. What will I do with my [major] degree?"
 
     show character lily
 
     if major == "Computer Science":
-        mc "I should probably get a job at a top tech company."
         jump cs_job
     elif major == "Liberal Arts":
         jump art_job

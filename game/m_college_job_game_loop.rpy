@@ -1,5 +1,20 @@
 label cs_job:
-    "You're homeless now."
+    mc "I should probably get a job at a top tech company."
+    menu:
+        "What tech job do you want?"
+
+        "Database Manager":
+            $ job = "Database Manager"
+        "Full Stack Web Developer":
+            $ job = "Full Stack Web Developer"
+        "Machine Learning Engineer":
+            $ job = "Machine Learning Engineer"
+    jump cs_game_loop
+
+label cs_game_loop:
+    scene bg LearnToCode
+    with fade
+    mc "Wow I'm at work...."
     jump end
 
 label art_job:
@@ -10,10 +25,12 @@ label art_job:
         "Work at WcBonalds":
             jump get_job
         "Try to be an artist":
-            jump art_2
+            $ job = "Artist"
+            jump artist_game_loop
 
-label art_2:
-    show bg broke_art_room
+label artist_game_loop:
+    scene bg broke_art_room
+    with fade
     show character lily
     mc "I've been making art for 6 months now and I'm totally out of money."
     mc "Since art is not working out, it looks like I only have two options,"
@@ -40,5 +57,15 @@ label aerospace_job:
             $ job = "Airplane Technician"
         "Rocket Engineer":
             $ job = "Rocket Engineer"
-    mc "Vroom imma fly plain"
+    jump aerospace_game_loop
+
+label aerospace_game_loop:
+    if job == "Airplane Technician":
+        scene bg airplane_office
+        with fade
+    else:
+        scene bg rocket_office
+        with fade
+
+    mc "I'm at work now!"
     jump end
