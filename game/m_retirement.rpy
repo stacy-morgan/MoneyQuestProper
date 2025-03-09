@@ -3,7 +3,7 @@ init python:
         return "${:,.0f}".format(value)
 
 label retirement:
-    year = 2070
+    $ year = 2070
     mc "I've been working for so long, I feel like it's time to retire!"
     $ total_assets = money + calculate_portfolio_value()
     $ total_assets_str = format_money(total_assets)
