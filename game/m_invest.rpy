@@ -42,14 +42,14 @@ label invest:
             jump no_buy
     
     label yes_buy:
-        $ held_stocks.update({'SPY', 10})
+        $ held_stocks["SPY"] = 10
     label no_buy:
         mc "I won't buy any. It's risky and we haven't had a recession in a while."
 
     mc "I've heard about dividends and how they're basically free money for holding a stock..."
-    mc "Seems like the fast food giant $WCB pays a dividend about about 2.2%."
+    mc "Seems like the fast food giant $WCB pays a dividend of about 2.2\%."
 
-    mc "So for the amount of stock you're holding, you can get paid 2.2% of that every year."
+    mc "So for the amount of stock you're holding, you can get paid 2.2\% of that every year."
     mc "But based on these historical S&P graphs, the returns are a lot more per year."
     mc "And the dividends can be risky because they can change the dividend return or the stock could be more volatile than the market as a whole."
 
@@ -62,7 +62,7 @@ label invest:
             jump no_wcb_div
     
     label wcb_div:
-        $ held_stocks.update({'WCB', 10})
+        $ held_stocks["WCB"] = 10
         "Yeah, I'll put a bit into it."
         "If WcBonald's stock is about $200, I'll buy about 100 shares."
         "That way, the value will be enough to give me about $400 in dividends every year."

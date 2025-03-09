@@ -12,7 +12,7 @@ define bank = Character("Bank Automated E-Mail")
 
 define mc = Character("Lily")
 
-define held_stocks = []
+define held_stocks = {}
 image bg nissan = "bg/Nissan.jpeg"
 image bg porsche = "bg/Porsche.jpeg"
 image bg atm = "bg/BrokeAhh.jpeg"
@@ -80,6 +80,9 @@ label choice1:
             
         "Stacy":
             jump invest
+
+        "Stacy 2":
+            jump year_over_loop
 label broke_ass_bitch:
     mc "I am out of money!"
     mc "You lose."
