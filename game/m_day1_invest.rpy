@@ -22,6 +22,8 @@ init python:
 
 
 label day1_invest:
+    $ noob = False
+
     if money < spy_price:
         "You have broken the game, you should never see this message."
         return

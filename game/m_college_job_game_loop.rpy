@@ -32,9 +32,13 @@ label cs_year_end:
     
     menu:
         "Invest some money":
-            $ calling_day1 = True
-            call day1_invest
-            $ calling_day1 = False
+            if noob:
+                $ calling_day1 = True
+                call day1_invest
+                $ calling_day1 = False
+            else:
+                call other_invest
+
             jump cs_boring
         "I don't believe in the stock market":
             jump cs_boring
@@ -140,19 +144,27 @@ label aero_boring:
 
 label batch_choices:
     scene bg home
-    mc "I have a lot of money now, what should I do with it?"
     menu:
-        "Buy mansion ($10,000,000)":
+        mc "I have a lot of money now, what should I do with it?"
+
+        "Buy mansion ($10,000,000)" if money >= 10000000:
             jump mansion
-        "Go on vacation ($100,000)":
+        "Go on vacation ($100,000)" if money >= 100000:
             jump vacation
-        "Invest money":
-            call day1_invest
+        "Invest money" if money >= 3000:
+            if noob:
+                $ calling_day1 = True
+                call day1_invest
+                $ calling_day1 = False
+            else:
+                call other_invest
+
             jump aerospace_game_loop
         "Keep working":
             jump aerospace_game_loop
 
 label mansion:
+    $ money -= 10000000
     scene black with fade
     pause 1.0
     show text "Risks: Buying a mansion comes at the risk of property tax and maintenance fees. Additionally, if you get laid off, then foreclosure is a possibility." with dissolve
@@ -179,6 +191,7 @@ label ending_mansion:
     jump retirement
 
 label vacation:
+    $ money -= 100000
     scene black with fade
     pause 1.0
     show text "Risks: Spending too much results in lower savings for emergencies and you are prioritizing vacation over work."

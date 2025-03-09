@@ -65,5 +65,4 @@ label other_invest:
 
     else:
         "I don't think that symbol is a good investment."
-
-
+    return
