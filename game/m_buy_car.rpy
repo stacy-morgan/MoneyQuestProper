@@ -37,4 +37,4 @@ label no_car:
         "Get a Bachelor's degree":
             jump degree
         "Invest in stocks":
-            jump invest
+            jump day1_invest

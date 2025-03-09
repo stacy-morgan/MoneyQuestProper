@@ -46,6 +46,7 @@ init python:
 # The game starts here.
 
 label start:
+    default salary = 0
     default held_stocks = {}
     default major = ""
     default money = 0
@@ -90,8 +91,6 @@ label debug_choice:
         "Other Invest":
             jump other_invest
 
-        #"Stacy Year Loop test":
-        #   jump year_over_loop
 label broke_ass_bitch:
     mc "I am out of money!"
     mc "You lose."

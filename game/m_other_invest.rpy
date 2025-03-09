@@ -26,7 +26,6 @@ label other_invest:
     $ market_order = (renpy.input("Choose a symbol to view.")).lower()
     if market_order in market_stocks:
         if market_order == "spy":
-            "SPY: Current price: [spy_price]"
             $ temp = renpy.input("Buy SPY?")
             if temp == "yes":
                 $ shares_to_buy = renpy.input("How many $SPY to buy @ $[spy_price]?")
@@ -46,7 +45,6 @@ label other_invest:
                 "Purchase successful."
 
         if market_order == "wcb":
-            "WCB: Current price: [wcb_price]"
             $ temp = renpy.input("Buy WCB?")
             if temp == "yes":
                 $ shares_to_buy = renpy.input("How many $SPY to buy @ $[wcb_price]?")
