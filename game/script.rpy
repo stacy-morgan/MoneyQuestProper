@@ -34,11 +34,11 @@ image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 image character oldlily = "chars/OldLily.png"
 
-$ major = ""
-$ money = 0
-$ year = 2025
-$ job = "none"
-$ house = False
+default major = ""
+default money = 0
+default year = 2025
+default job = "none"
+default house = False
 
 init python:
     config.overlay_screens.append("money_display")
