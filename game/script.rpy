@@ -41,7 +41,7 @@ default job = "none"
 default house = False
 
 default spy_price = 5000
-default wcb_price = 300
+default wcb_price = 150
 
 init python:
     config.overlay_screens.append("money_display")

@@ -42,7 +42,8 @@ label invest:
             jump no_buy
     
     label yes_buy:
-        $ held_stocks["SPY"] = 10
+        $ held_stocks["SPY"] = 7
+        $ money -= 35000
     label no_buy:
         mc "I won't buy any. It's risky and we haven't had a recession in a while."
 
@@ -62,7 +63,8 @@ label invest:
             jump no_wcb_div
     
     label wcb_div:
-        $ held_stocks["WCB"] = 10
+        $ held_stocks["WCB"] = 100
+        $ money -= (wcb_price)*100
         "Yeah, I'll put a bit into it."
         "If WcBonald's stock is about $200, I'll buy about 100 shares."
         "That way, the value will be enough to give me about $400 in dividends every year."
