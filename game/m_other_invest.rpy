@@ -41,7 +41,7 @@ label other_invest:
                     "Your order has been placed..."
                     python:
                         try:
-                            held_stocks["SPY"] = shares_before #Pre spy
+                            shares_before = held_stocks["SPY"]#Pre spy
                             held_stocks["SPY"] = shares_before + shares_to_buy
                             money -= total_price
                         except KeyError:
@@ -60,7 +60,7 @@ label other_invest:
                     "Your order has been placed..."
                     python:
                         try:
-                            held_stocks["WCB"] = shares_before
+                            shares_before = held_stocks["WCB"]
                             held_stocks["WCB"] = shares_before + shares_to_buy
                             money -= total_price
                         except KeyError:
