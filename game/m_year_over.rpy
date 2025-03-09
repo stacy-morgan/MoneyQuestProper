@@ -166,7 +166,7 @@ label year_over:
     else:
         $ money -= (24000*10)
 
-    mc "My rent is also due now. It cost of living around $24,000 per year."
+    mc "My rent is also due now. The cost of living is around $24,000 per year."
 
     if money < 0:
         scene bg atm
