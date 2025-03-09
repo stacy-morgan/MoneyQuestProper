@@ -68,7 +68,7 @@ label learn_skills:
 label social_media:
     scene bg SocialMedia
     with dissolve
-    "You have try to become a social media influencer."
+    "You try to become a social media influencer."
     "However, it took a couple hours off your job."
     "Your new yearly earnings is $6,030 after expenses."
     jump probability_social_media
@@ -140,7 +140,7 @@ label emergency:
     with dissolve
     mc "I got into a car accident."
     mc "I saved my money for a rainy day and was able to pay for my hospital bills."
-    "Inflation went up by 10%..."
+    "Inflation increased by 10%%..."
     scene bg black with fade
     pause 1.0
     "Retirement"
@@ -151,6 +151,7 @@ label consequence:
     scene bg mansion with fade
     mc "I spent all my money on a new lifestyle."
     mc "I have barely any money to spend now."
+    "Inflation increased by 10%%..."
     scene bg black
     with fade
     pause 1.0
