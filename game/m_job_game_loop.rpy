@@ -21,8 +21,9 @@ label retire_text:
 
 
 label ask_about_investing:
-    "I should probably check my stocks..."
     menu:
+        "I should probably check my stocks..."
+
         "Check stocks":
             if noob:
                 $ calling_day1 = True
