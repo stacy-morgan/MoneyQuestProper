@@ -1,5 +1,4 @@
 label other_invest:
-    $ show_stock_prices = True
     define fast_dissolve = Dissolve(0.5)
     define normal_dissolve = Dissolve(1.0)
     define slow_dissolve = Dissolve(2.0)
@@ -16,6 +15,7 @@ label other_invest:
 
     "Time to buy some stocks!"
     "Let's check the market prices."
+    $ show_stock_prices = True
 
     $ market_stocks = [
         "spy",
