@@ -40,11 +40,11 @@ label expenses_chef:
     pause 2.0
     show text "Yearly savings: $41,600" with dissolve
     pause 2.0
-    whoe text "Yearly expenses: $24,000" with dissolve
+    show text "Yearly expenses: $24,000" with dissolve
     pause 2.0
     show text "Remaining savings: $17,600" with dissolve
     pause 2.0
-    jump end
+    jump summary_chef
 
 label summary_janitor:
     pause 1.0
@@ -58,6 +58,19 @@ label summary_janitor:
             jump social_media
         "Continue working":
             jump expenses_janitor_keep
+
+label summary_chef:
+    pause 1.0
+    show bg home
+    "You make approximately $17k a year, which is not ideal."
+    "Would you like to get a side hobby?"
+    menu:
+        "Learn high-paying skills (Work 5 hours less)":
+            jump learn_skills_c
+        "Start career on social media (Work 5 hours less)":
+            jump social_media_c
+        "Continue working":
+            jump expenses_chef_keep
 
 label learn_skills:
     scene bg LearnToCode
@@ -75,8 +88,28 @@ label social_media:
     "Your new yearly earnings is $6,030 after expenses."
     jump probability_social_media
 
+label learn_skills_c:
+    scene bg LearnToCode
+    with dissolve
+    "You have learned high-paying skills."
+    "However, it took a couple hours off your job."
+    "Your new yearly earnings is $12,400 after expenses."
+    jump probability_learn_skills_c
+
+label social_media_c:
+    scene bg SocialMedia
+    with dissolve
+    "You have learned high-paying skills."
+    "However, it took a couple hours off your job."
+    "Your new yearly earnings is $12,400 after expenses."
+    jump probability_social_media_c
+
 label expenses_janitor_keep:
     "You continue to work as a janitor. You must use your budget wisely, barely surviving on $10k."
+    jump conclusion
+
+label expenses_chef_keep:
+    "You continue to work as a chef. You must use your budget wisely, barely surviving on $17k."
     jump conclusion
 
 label probability_learn_skills:
@@ -126,6 +159,53 @@ label probability_social_media:
         pause 2.0
         jump conclusion
 
+label probability_learn_skills_c:
+    $ import random
+    $ chance = random.random()
+
+    scene black with fade
+    pause 1.0
+    show text "Another year has passed..." with dissolve
+    if chance < 0.5:  
+        pause 2.0
+        show text "You have no success in finding a job with your new skills." with dissolve
+        pause 2.0
+        show text "You return to your normal hours." with dissolve
+        pause 2.0
+        show text "On the bright side, you got promoted and are now making $21,760 after expenses." with dissolve
+        jump conclusion
+    else:
+        pause 2.0
+        show text "You found a new job with your new skills." with dissolve
+        pause 2.0
+        show text "You are now making $22,990 after expenses." with dissolve
+        pause 2.0
+        jump conclusion
+
+label probability_social_media_c:
+    $ import random
+    $ chance = random.random()
+
+    scene black with fade
+    pause 1.0
+    show text "Another year has passed..." with dissolve
+    if chance < 0.5:  
+        pause 2.0
+        show text "You have no success in becoming a social media influencer." with dissolve
+        pause 2.0
+        show text "You return to your normal hours." with dissolve
+        pause 2.0
+        show text "On the bright side, you got promoted and are now making $21,760 after expenses." with dissolve
+        pause 2.0
+        jump conclusion
+    else:
+        pause 2.0
+        show text "You have become a successful social media influencer." with dissolve
+        pause 2.0
+        show text "You are now making $21,990 after expenses." with dissolve
+        pause 2.0
+        jump conclusion
+
 label conclusion:
     scene bg home
     with dissolve
@@ -143,7 +223,8 @@ label emergency:
     mc "I got into a car accident."
     mc "I saved my money for a rainy day and was able to pay for my hospital bills."
     "Inflation increased by 10%%..."
-    scene bg black with fade
+    scene black with fade
+    "Years passed..."
     pause 1.0
     "Retirement"
     pause 2.0
@@ -154,8 +235,8 @@ label consequence:
     mc "I spent all my money on a new lifestyle."
     mc "I have barely any money to spend now."
     "Inflation increased by 10%%..."
-    scene bg black
-    with fade
+    scene black with fade
+    "Years passed..."
     pause 1.0
     "Retirement"
     pause 2.0

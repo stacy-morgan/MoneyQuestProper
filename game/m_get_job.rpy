@@ -50,7 +50,6 @@ label jji_a:
 label jji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
     scene bg home
-    show character lily
     mc "Aw man, I didn't get the job,"
     mc "They said I had to \'go back to high school chemistry\' or something."
     mc "I guess Mr. White wasn't the best teacher..."
@@ -62,6 +61,35 @@ label wcb_chef_job_interview:
         xpos 0.5  ypos 0
     qqq "Hi, I'm Eileen! I'll be interviewing you today."
     e "The question is..."
-    # menu:
-    #     e "How do you put the fries in the bag?"
+    menu: 
+        e "Fill in the blank. Put the _____ in the bag?"
+
+        "A) fries":
+            jump cji_a
+
+        "B) money":
+            jump cji_b
     jump end
+
+label cji_a:
+    hide character animegirl
+    show character animegirl:
+        xpos 0.5  ypos 0
+        yoffset 0
+        easein 0.25 yoffset -100
+        easeout 0.25 yoffset 0
+        easein 0.2 yoffset -30
+        easeout 0.2 yoffset 0
+        easein 0.15 yoffset -10
+        easeout 0.15 yoffset 0
+        easein 0.1 yoffset -4
+        easeout 0.1 yoffset 0
+    e "Correct! You're hired."
+    jump wcb_chef_game_loop
+
+label cji_b:
+    e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
+    scene bg home
+    mc "I wish I knew how to put the fries in the bag..."
+    mc "Well, there's nothing I can do besides trying again."
+    jump get_job
