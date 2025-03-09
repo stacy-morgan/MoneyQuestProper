@@ -8,10 +8,8 @@ label other_invest:
     else:
         $ recession = True
 
-    if not recession:
-        scene bg stocks_up
-    else:
-        scene bg stocks_down
+    scene bg stocks_up
+
 
     "Time to buy some stocks!"
     "Let's check the market prices."
@@ -37,12 +35,12 @@ label other_invest:
                 else:
                     python:
                         try:
-                            shares_before = held_stocks["SPY"]
+                            shares_before = held_stocks["SPY"] #Pre spy
                             held_stocks["SPY"] = shares_before + shares_to_buy
                         except KeyError:
                             held_stocks["SPY"] = shares_to_buy
                             money -= total_price
-                "Purchase successful."
+                        "Purchase successful."
 
         if market_order == "wcb":
             $ temp = renpy.input("Buy WCB?")
@@ -61,8 +59,9 @@ label other_invest:
                         except KeyError:
                             held_stocks["WCB"] = shares_to_buy
                             money -= total_price
-                "Purchase successful."
+                    "Purchase successful."
 
     else:
         "I don't think that symbol is a good investment."
+    $ show_stock_prices = False
     return
