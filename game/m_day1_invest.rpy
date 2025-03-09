@@ -51,7 +51,10 @@ label day1_invest:
     mc "With the money I have, in theory I could buy some of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enough to live."
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     mc "My living expenses run me about $24,000 a year. So I'll need to get a job."
