@@ -12,7 +12,6 @@ define bank = Character("Bank Automated E-Mail")
 
 define mc = Character("Lily")
 
-define held_stocks = {}
 image bg nissan = "bg/Nissan.jpeg"
 image bg porsche = "bg/Porsche.jpeg"
 image bg atm = "bg/BrokeAhh.jpeg"
@@ -39,14 +38,14 @@ image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 image character oldlily = "chars/OldLily.png"
 
-default major = ""
-default money = 0
-default year = 2025
-default job = "none"
-default house = False
+# default major = ""
+# default money = 0
+# default year = 2025
+# default job = "none"
+# default house = False
 
-default spy_price = 500
-default wcb_price = 150
+# default spy_price = 500
+# default wcb_price = 150
 
 init python:
     config.overlay_screens.append("money_display")
@@ -54,6 +53,15 @@ init python:
 # The game starts here.
 
 label start:
+    define held_stocks = {}
+    default major = ""
+    default money = 0
+    default year = 2025
+    default job = "none"
+    default house = False
+
+    default spy_price = 500
+    default wcb_price = 150
 
     scene bg home
     show lily
@@ -65,11 +73,10 @@ label start:
     $ money = 50000
     mc "I recently inherited a large amount of money from my great aunt. (+$50,000)"
     mc "What should I do with it?"
-    # jump buy_car
 
-    jump choice1
+    jump debug_choice = 0
 
-label choice1:
+label debug_choice:
     menu:
         "Buy a car":
             jump buy_car
