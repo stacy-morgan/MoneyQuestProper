@@ -107,6 +107,7 @@ label year_over_loop:
         $ money -= (24000*5)
 
     if money < 0:
+        scene bg atm
         mc "I have no more money!"
         mc "I guess I have to move back in with my parents."
         mc "I should have been financially smarter, I guess."
