@@ -98,7 +98,7 @@ label wcb_chef_game_loop:
     elif year == 2070:
         jump retire_text
     else:
-        jump ask_about_investing from _call_ask_about_investing
+        jump ask_about_investing
 
     jump expenses
 
