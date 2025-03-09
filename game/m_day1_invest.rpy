@@ -94,7 +94,7 @@ label post_sp_buy:
     mc "But based on these historical S&P graphs, the returns are a lot more per year."
     mc "And the dividends can be risky because they can change the dividend return or the stock could be more volatile than the market as a whole."
     mc "It's also good to just diversify a llittle bit."
-    mc "Seems like WcBonald's stock costs [wcb_cost]."
+    mc "Seems like WcBonald's stock costs [wcb_price]."
     mc "It would probably be safe to get a bit of another stock, and dividends aren't bad too."
     menu:
         "Should I buy some WcBonald's dividend stock?"
