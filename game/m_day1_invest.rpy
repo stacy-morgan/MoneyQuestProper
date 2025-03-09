@@ -10,7 +10,7 @@ init python:
         global investment_level
         global tutorial_buy_sp
         if investment_level == 1:
-                tutorial_buy_sp = 1
+            tutorial_buy_sp = 1
         if investment_level == 2:
             tutorial_buy_sp = 5
         if investment_level == 3:
@@ -20,7 +20,7 @@ init python:
 
 
 label day1_invest:
-    if money < sp_price:
+    if money < spy_price:
         "You have broken the game, you should never see this message."
         return
     default dividend_amt = 0
@@ -39,8 +39,10 @@ label day1_invest:
     if between(money, 31000, 60000):
         $ investment_level = 3
 
-    if between > 60000:
+    if money > 60000:
         $ investment_level = 4
+
+    $ calc_prices_and_amts()
 
 
     mc "Lets buy some juicy stocks and ETFs."
@@ -60,11 +62,11 @@ label day1_invest:
     mc "Instead, it seems like we have to use an \"exchange-traded fund\", or ETF."
     mc "These {i}track{/i} the price of the market indexes. The symbol of the S&P ETF is SPY."
     mc "I'll put some money into it."
-    mc "So, the ETF costs {spy_price}."
+    mc "So, the ETF costs [spy_price]."
     mc "With the money I have, in theory I could buy some of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
 
-    mc "So I'll probably just buy about {tutorial_buy_sp}. I don't want to put too much in, otherwise I won't have enough to live."
+    mc "So I'll probably just buy about [tutorial_buy_sp]. I don't want to put too much in, otherwise I won't have enough to live."
     menu:
         "Should I buy the S&P ETF?"
 
@@ -74,8 +76,8 @@ label day1_invest:
             jump no_buy
     
     label yes_buy:
-        $ held_stocks["SPY"] = {tutorial_buy_sp}
-        $ money -= (tutorial_buy_sp * sp_price)
+        $ held_stocks["SPY"] = tutorial_buy_sp
+        $ money -= (tutorial_buy_sp * spy_price)
         jump post_sp_buy
 
     label no_buy:
