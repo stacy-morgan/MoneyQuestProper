@@ -41,16 +41,18 @@ image character oldlily = "chars/OldLily.png"
 
 init python:
     config.overlay_screens.append("money_display")
+    config.overlay_screens.append("stock_buy_display")
 
 # The game starts here.
 
 label start:
-    define held_stocks = {}
+    default held_stocks = {}
     default major = ""
     default money = 0
     default year = 2025
     default job = "none"
     default house = False
+    default show_stock_prices = False
 
     default spy_price = 500
     default wcb_price = 150

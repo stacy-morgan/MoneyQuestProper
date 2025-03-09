@@ -133,6 +133,27 @@ screen money_display():
                         # $ stock_value = quantity * stock_price
                         text "{}: {} shares at ${:,.0f} per share".format(stock, quantity, stock_price) style "money_text"
 
+
+screen stock_buy_display():
+    if show_stock_prices:
+        zorder 102  # This ensures it appears on top of other elements
+        frame:
+            xalign 0.444
+            yalign 0.27
+
+            xsize 0.54
+            ysize 0.485
+
+            xpadding 10
+            ypadding 5
+            vbox:
+                spacing 5
+                text "SPY: ${}".format(spy_price) style "money_text"
+                text "WCB: ${}".format(wcb_price) style "money_text"
+
+style stock_buy_text:
+    color "#ffffff"
+    size 40
 style money_text:
     color "#ffffff"
     size 22

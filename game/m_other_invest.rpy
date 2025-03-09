@@ -1,4 +1,5 @@
 label other_invest:
+    $ show_stock_prices = True
     define fast_dissolve = Dissolve(0.5)
     define normal_dissolve = Dissolve(1.0)
     define slow_dissolve = Dissolve(2.0)
@@ -41,6 +42,26 @@ label other_invest:
                             held_stocks["SPY"] = shares_before + shares_to_buy
                         except KeyError:
                             held_stocks["SPY"] = shares_to_buy
+                            money -= total_price
+                "Purchase successful."
+
+        if market_order == "wcb":
+            "WCB: Current price: [wcb_price]"
+            $ temp = renpy.input("Buy WCB?")
+            if temp == "yes":
+                $ shares_to_buy = renpy.input("How many $SPY to buy @ $[wcb_price]?")
+                $ shares_to_buy = int(shares_to_buy)
+                $ total_price = shares_to_buy * wcb_price
+                "$[wcb_price] x [shares_to_buy] shares: [total_price]"
+                if total_price > money:
+                    "Robintrade alert: Insufficient funds in account."
+                else:
+                    python:
+                        try:
+                            shares_before = held_stocks["WCB"]
+                            held_stocks["WCB"] = shares_before + shares_to_buy
+                        except KeyError:
+                            held_stocks["WCB"] = shares_to_buy
                             money -= total_price
                 "Purchase successful."
 
