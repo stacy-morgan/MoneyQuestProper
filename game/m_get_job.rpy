@@ -50,6 +50,7 @@ label jji_a:
 label jji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
     scene bg home
+    show character lily
     mc "Aw man, I didn't get the job,"
     mc "They said I had to \'go back to high school chemistry\' or something."
     mc "I guess Mr. White wasn't the best teacher..."
