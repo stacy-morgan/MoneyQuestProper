@@ -116,6 +116,7 @@ label post_sp_buy:
 
     label after_wcb_div:
         if calling_day1:
+            $ calling_day1 = False
             return
         "So now, I guess I just have to wait?"
         "I'll have a bunch of money in like 20 years or so, I guess."
