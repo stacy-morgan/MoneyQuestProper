@@ -17,7 +17,10 @@ label retirement:
 
 label retireLess10000:
     scene bg broke_art_room
-    show character oldlily
+    if year != 2025:
+        show character oldlily
+    else:
+        show character lily
     mc "Aw man, I really should have taken some more care with saving money when I had the chance!"
     mc "I only have [total_assets_str] in total assets. I'm basically broke."
     mc "I'm not sure what I can do now."
@@ -25,6 +28,7 @@ label retireLess10000:
 
     scene black with fade
     pause 1.0
+    $ year += 5
     show text "5 years later..." with dissolve
     pause 2.0
 

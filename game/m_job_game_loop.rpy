@@ -30,7 +30,8 @@ label ask_about_investing:
             else:
                 call other_invest from _call_other_invest_3
         "Ignore":
-            pass
+            mc "I won't check my stocks right now."
+            mc "I'll let it grow."
     return
 
 mc "I think I've worked long enough."
