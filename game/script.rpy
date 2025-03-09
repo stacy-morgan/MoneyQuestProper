@@ -12,7 +12,6 @@ define bank = Character("Bank Automated E-Mail")
 
 define mc = Character("Lily")
 
-define held_stocks = {}
 image bg nissan = "bg/Nissan.jpeg"
 image bg porsche = "bg/Porsche.jpeg"
 image bg atm = "bg/BrokeAhh.jpeg"
@@ -53,6 +52,15 @@ init python:
 # The game starts here.
 
 label start:
+    define held_stocks = {}
+    default major = ""
+    default money = 0
+    default year = 2025
+    default job = "none"
+    default house = False
+
+    default spy_price = 500
+    default wcb_price = 150
 
     scene bg home
     show lily
