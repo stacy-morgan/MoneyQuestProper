@@ -64,6 +64,7 @@ label start:
 
     default tutorial_buy_sp = 0
     default tutorial_buy_wcb = 0
+    default calling_day1 = False
 
     default sp_change = [
         1.11,  # New Year 2026

@@ -110,13 +110,13 @@ label post_sp_buy:
         "Yeah, I'll put a bit into it."
         "Only 2 shares, though."
         "These dividends aren't that good, and I just want to invest in something that I've actually heard of to start."
-        jump after_wcb_div
 
     label no_wcb_div:
         "Eh, I don't think it'll even give me that much. I'm better off putting it into a savings account."
-        jump after_wcb_div
 
     label after_wcb_div:
+        if calling_day1:
+            return
         "So now, I guess I just have to wait?"
         "I'll have a bunch of money in like 20 years or so, I guess."
         "Hopefully this turns out well!"
