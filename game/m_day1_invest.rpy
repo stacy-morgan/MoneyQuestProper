@@ -2,9 +2,11 @@
 init python:
     def calc_prices_and_amts():
         global investment_level
+        if investment_level == 1:
+            pass
 
     def between(var, o1, o2):
-        if var => o1 and var <= o2:
+        if var >= o1 and var <= o2:
             return True
         else:
             return False
@@ -18,16 +20,16 @@ label day1_invest:
     $ investment_Level = 0
 
     if between(money, 0, 10000):
-        investment_level = 1
+        $ investment_level = 1
 
-    if money > 10001 and money <= 30000:
-        investment_level = 2
+    if between(money, 10001, 30000):
+        $ investment_level = 2
 
-    if money > 30001 and money <= 60000:
-        investment_level = 2
+    if between(money, 31000, 60000):
+        $ investment_level = 2
 
-    if money > 60000:
-        investment_level = 3
+    if between > 60000:
+        $ investment_level = 3
 
 
     mc "Lets buy some juicy stocks and ETFs."
@@ -50,13 +52,8 @@ label day1_invest:
     mc "So, the ETF costs $500."
     mc "With the money I have, in theory I could buy some of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
     mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enough to live."
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     mc "My living expenses run me about $24,000 a year. So I'll need to get a job."
     menu:
         "Should I buy the S&P ETF?"

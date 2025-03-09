@@ -85,9 +85,9 @@ label year_over_loop:
 
     if year == 2040:
         news_reporter "In finance news, the S&P 500 has gone up by 10.3\% since last year. The market is really climbing back up."
-        news_reporter "Since the recession, it has gone back up by approximately 89\%."
+        news_reporter "In the last 5 years, it's up about 76\%."
         news_reporter "From the recession, it was at [spy_price]."
-        $ spy_price = round(spy_price*1.89)
+        $ spy_price = round(spy_price*1.76)
         news_reporter "It is currently trading at [spy_price]."
         news_reporter "Not the highest growth, but it's still a way to double your money."
 
