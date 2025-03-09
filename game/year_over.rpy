@@ -9,7 +9,7 @@ label year_over_loop:
 
     mc "Happy new year! It is now [year]."
     if money > 0:
-        $ savings_add = (money*0.045)
+        $ savings_add = round((money*0.045), 2)
         bank "Thank you for keeping a savings account with Baldman Sacks. Interest is 4.5\% APY for your savings account."
         bank "You have been credited $[savings_add]."
         $ money = round(money+savings_add, 2)
@@ -105,6 +105,13 @@ label year_over_loop:
     else:
         $ year += 5
         $ money -= (24000*5)
+
+    if money < 0:
+        scene bg atm
+        mc "I have no more money!"
+        mc "I guess I have to move back in with my parents."
+        mc "I should have been financially smarter, I guess."
+        return
 
 
     jump year_over_loop
