@@ -15,7 +15,7 @@ init python:
             tutorial_buy_sp = 5
         if investment_level == 3:
             tutorial_buy_sp = 15
-            if sp_price == 500:
+            if spy_price == 500:
                 tutorial_buy_sp += 20
         if investment_level == 4:
             tutorial_buy_sp = 30
