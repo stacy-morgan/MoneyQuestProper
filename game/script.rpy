@@ -45,7 +45,8 @@ init python:
 # The game starts here.
 
 label start:
-    mc "[persistent.highscore]"
+    if persistent.highscore != 0:
+        "High score: $[persistent.highscore]"
     default debug = False
     default noob = True
     default salary = 0
