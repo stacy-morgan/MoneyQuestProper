@@ -1,4 +1,4 @@
-label year_over_loop:
+label year_over:
     scene bg winter_room
     with Dissolve(2.0)
 
