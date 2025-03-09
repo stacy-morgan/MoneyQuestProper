@@ -1,6 +1,8 @@
 label year_over_loop:
     if "WCB" in held_stocks:
-        savings_acct += ( (wcb_price*10) *0.022)
+        dividend_amt =  ((wcb_price*10) *0.022)
+        savings_acct += dividend_amt
+        
 
 
     if year == 2026:

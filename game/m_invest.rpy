@@ -2,7 +2,7 @@ label invest:
     $ spy_price = 5000
     $ wcb_price = 300
     $ savings_acct = 0
-    $ div_amt = 0
+    $ dividend_amt = 0
 
     mc "Lets buy some juicy stocks and ETFs."
     scene bg stocks_pc_green
