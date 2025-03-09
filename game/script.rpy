@@ -46,6 +46,7 @@ init python:
 # The game starts here.
 
 label start:
+    default noob = True
     default salary = 0
     default held_stocks = {}
     default major = ""
@@ -54,6 +55,7 @@ label start:
     default job = "none"
     default house = False
     default show_stock_prices = False
+    default gone_to_college = False
 
     default spy_price = 500
     default wcb_price = 150

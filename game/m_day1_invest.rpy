@@ -96,4 +96,6 @@ label post_sp_buy:
             "Go to college.":
                 jump degree
 
+    return
+
 

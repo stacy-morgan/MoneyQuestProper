@@ -34,7 +34,13 @@ label degree:
     pause 2.0
 
     scene bg graduation
-    mc "I can't believe I'm graduating already. What will I do with my [major] degree?"
+    $ year += 4
+    $ gone_to_college = True
+    mc "I can't believe I'm graduating already. I'm in the class of [year]!"
+    mc "I haven't been spending much lately..."
+    mc "My savings account has probably given me a lot of interest."
+    call collegeTimePass
+    mc "What will I do with my [major] degree?"
 
     show character lily
 

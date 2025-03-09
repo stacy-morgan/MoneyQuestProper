@@ -117,3 +117,16 @@ label year_over_loop:
 
 
     jump year_over_loop
+
+label collegeTimePass:
+    $ spy_price = round(spy_price*1.11) #2026
+    $ spy_price = round( spy_price*1.092) #2027
+    $ wcb_price = round(wcb_price*1.095) #2028
+
+    #You graduate in the middle of 2029.
+    #Instant intrest on savings account
+        for x in range(3):
+            savings_add = round((money*0.045))
+            money += savings_add
+    
+        

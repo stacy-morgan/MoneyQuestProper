@@ -89,6 +89,21 @@ label aerospace_game_loop:
 
     mc "Wow, I'm at work."
     mc "Its quite boring, but I get paid $150,000 a year, minus the $24,000 in expenses."
+    call year_over
+    if year != 2030:
+        mc "Wow, the S&P sure had some great returns."
+    else:
+        mc "Wow, the market is down right now."
+
+    if noob:
+        menu:
+        mc "Should learn to invest?"
+            "Yes":
+                call day1_invest
+            "No":
+                "I should keep what I have in savings."
+                "As long as I leave it in savings, I'll be okay."
+
     jump aero_boring
 
 label aero_boring:
@@ -98,9 +113,9 @@ label aero_boring:
     pause 2.0
     show text "You decide to spend your hard earned money." with dissolve
     pause 1.0
-    jump bach_choices
+    jump batch_choices
 
-label bach_choices:
+label batch_choices:
     scene bg home
     mc "I have many choices to make."
     menu:
@@ -108,6 +123,11 @@ label bach_choices:
             jump mansion
         "Go on vacation ($100,000)":
             jump vacation
+        "Invest money":
+            call day1_invest
+            jump 
+        "Keep working":
+            jump 
 
 label mansion:
     scene black with fade
