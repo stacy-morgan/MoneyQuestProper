@@ -62,6 +62,6 @@ label wcb_chef_job_interview:
         xpos 0.5  ypos 0
     qqq "Hi, I'm Eileen! I'll be interviewing you today."
     e "The question is..."
-    menu:
-        e "How do you put the fries in the bag?"
+    # menu:
+    #     e "How do you put the fries in the bag?"
     jump end
