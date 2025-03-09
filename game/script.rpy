@@ -46,6 +46,7 @@ init python:
 # The game starts here.
 
 label start:
+    default debug = True
     default noob = True
     default salary = 0
     default held_stocks = {}
@@ -87,8 +88,10 @@ label start:
     $ money = 50000
     mc "I recently inherited a large amount of money from my great aunt. (+$50,000)"
     mc "What should I do with it?"
-
-    jump debug_choice
+    if debug:
+        jump debug_choice
+    else:
+        jump buy_car
 
 label debug_choice:
     menu:
