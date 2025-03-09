@@ -98,7 +98,7 @@ label year_over:
         news_reporter "In other news, WcBonalds reports a 37\% increase in stock value in the last 5 years."
         $ wcb_price = round(wcb_price*1.37)
         news_reporter "GGL appears to be losing more, reporting a loss of 13\% in the last 5 years."
-        $ ggl_price = round(ggl_price*0.087)
+        $ ggl_price = round(ggl_price*0.87)
 
     if year == 2040:
         news_reporter "In finance news, the S&P 500 has gone up by 10.3\% since last year. The market is really climbing back up."
@@ -123,8 +123,8 @@ label year_over:
 
         news_reporter "In other news, WcBonalds reports a 33\% increase in stock value in the last 10 years."
         $ wcb_price = round(wcb_price*1.33)
-        news_reporter "GGL has tanked dramatically, reporting a loss of 31\% in the last 10 years."
-        $ ggl_price = round(ggl_price*0.69)
+        news_reporter "GGL has tanked dramatically, reporting a loss of 40\% in the last 10 years."
+        $ ggl_price = round(ggl_price*0.6)
 
     if year == 2060:
         news_reporter "In finance news, the S&P 500 has gone up by 10\% since last year. The market continues to amaze!"
