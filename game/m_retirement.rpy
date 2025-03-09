@@ -20,7 +20,7 @@ label retireLess10000:
     #show a picture of a grave stone saying that im homeless or somthing like that
 
 label retireBetween:
-    mc "Ok so I'm not to broke, but I don't have that much money saved up."
+    mc "Ok so I'm not too broke, but I don't have that much money saved up."
     if house == True:
         mc "Atleast I have this house, but I wish I could buy whatever I wanted."
         mc "Maybe in the next life, I could make a lot more and travel the world!"
