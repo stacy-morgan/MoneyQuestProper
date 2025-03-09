@@ -119,7 +119,7 @@ screen money_display():
             text "Year: {}".format(year) style "money_text"
             text "Money: ${:,.0f}".format(money) style "money_text"
             if salary > 0:
-                text "Salary: ${}/yr".format(salary) style "money_text"
+                text "Salary: ${:,.0f}/yr".format(salary) style "money_text"
     if calculate_portfolio_value() > 0:
         frame:
             xalign 0.0
