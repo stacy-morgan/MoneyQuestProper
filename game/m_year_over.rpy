@@ -149,7 +149,7 @@ label year_over:
         news_reporter "It is currently trading at [spy_price]."
 
         news_reporter "In other news, WcBonalds reports a 5.9\% increase in stock value in the last 10 years."
-        $ wcb_price = round(wcb_price*0.0941)
+        $ wcb_price = round(wcb_price*1.059)
         news_reporter "GGL has gone bankrupt,their stocks are useless."
         $ ggl_price = 0
     
