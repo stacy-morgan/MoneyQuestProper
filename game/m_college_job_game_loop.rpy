@@ -25,7 +25,7 @@ label cs_boring:
     pause 2.0
     show text "You decide to spend your hard earned money." with dissolve
     pause 2.0
-    jump bach_choices
+    jump batch_choices
 
 label art_job:
     mc "I really want to make art now, but I'm worried that I won't make enough money to pay for an apartment."
