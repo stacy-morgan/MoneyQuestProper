@@ -75,7 +75,7 @@ label start:
 
 label debug_choice:
     menu:
-        "Buy a car":
+        "Buy a car THIS WILL ALWAYS HAPPEN IN THE GAME. THIS MENU IS FOR TESTING ONLY.":
             jump buy_car
 
         "Get a job":
