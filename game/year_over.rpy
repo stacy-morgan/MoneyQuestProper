@@ -4,8 +4,10 @@ label year_over_loop:
 
     if year < 2030:
         $ year += 1
+        $ money += salary
     else:
         $ year += 5
+        $ money += salary*5
 
     mc "Happy new year! It is now [year]."
     if money > 0:
