@@ -11,8 +11,8 @@ label year_over:
 
     mc "Happy new year! It is now [year]."
     if money > 0:
-        $ savings_add = round((money*0.045))
-        bank "Thank you for keeping a savings account with Baldman Sacks. Interest is 4.5\% APY for your savings account."
+        $ savings_add = round((money*0.017))
+        bank "Thank you for keeping a savings account with Baldman Sacks. Interest is 1.7\% APY for your savings account."
         bank "You have been credited $[savings_add]."
         $ money = round(money+savings_add)
 
