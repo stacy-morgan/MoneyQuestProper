@@ -26,6 +26,8 @@ label year_over:
 
         news_reporter "In other news, WcBonalds reports a 10\% increase in stock value this year."
         $ wcb_price = round(wcb_price*1.1)
+        news_reporter "GGL is also up only 1.1\% this year."
+        $ ggl_price = round(ggl_price*1.011)
 
     if year == 2027:
         news_reporter "In finance news, the S&P 500 has gone up by 9.2\% since last year. Great returns!"
@@ -37,6 +39,8 @@ label year_over:
 
         news_reporter "In other news, WcBonalds reports a 9\% increase in stock value this year."
         $ wcb_price = round(wcb_price*1.09)
+        news_reporter "GGL has fallen this year, down 3\% to date."
+        $ ggl_price = round(ggl_price*0.97)
 
     if year == 2028:
         news_reporter "In finance news, the S&P 500 has gone up by 9.5\% since last year. Great returns!"
@@ -48,6 +52,8 @@ label year_over:
 
         news_reporter "In other news, WcBonalds reports a 4\% increase in stock value this year."
         $ wcb_price = round(wcb_price*1.04)
+        news_reporter "GGL has fallen even further this year, down 3.3\% to date."
+        $ ggl_price = round(ggl_price*0.967)
 
     if year == 2029:
         news_reporter "In finance news, the S&P 500 has gone up by 8.1\% since last year. Not as great, but it's still outpacing inflation."
@@ -59,6 +65,9 @@ label year_over:
 
         news_reporter "In other news, WcBonalds reports a 6\% increase in stock value this year."
         $ wcb_price = round(wcb_price*1.06)
+        news_reporter "GGL has fallen more this year, to nobody's surprise."
+        news_reporter " The company reported losses of  3.1\% to date."
+        $ ggl_price = round(ggl_price*0.969)
 
     if year == 2030:
         news_reporter "In finance news, the S&P 500 has had a terrible year."
@@ -70,7 +79,10 @@ label year_over:
         news_reporter "We will recover!"
         news_reporter "Experts may consider this a buying opportunity, ready to pounce later for higher profits."
         news_reporter "In other news, WcBonalds reports a 1.3\% decrease in stock value this year."
-        $ wcb_price = round(wcb_price*0.0987)
+        $ wcb_price = round(wcb_price*0.987)
+        news_reporter "GGL has been hit the hardest by this recession."
+        news_reporter "They report stock losses of 25.11\% to date."
+        $ ggl_price = round(ggl_price*0.7489)
 
     if year == 2035:
         news_reporter "In finance news, the S&P 500 has gone up by 9.3\% since last year. The market is recovering."
@@ -82,6 +94,9 @@ label year_over:
 
         news_reporter "In other news, WcBonalds reports a 84\% increase in stock value in the last 5 years."
         $ wcb_price = round(wcb_price*1.84)
+        news_reporter "GGL appears to be crawling back, reporting a gain of 2.3\% in the last 5 years."
+        news_reporter "Is this the start of their turnaround?"
+        $ ggl_price = round(ggl_price*1.023)
 
     if year == 2040:
         news_reporter "In finance news, the S&P 500 has gone up by 10.3\% since last year. The market is really climbing back up."
@@ -92,7 +107,10 @@ label year_over:
         news_reporter "Not the highest growth, but it's still a way to double your money."
 
         news_reporter "In other news, WcBonalds reports a 62\% increase in stock value in the last 5 years."
-        $ wcb_price = round(wcb_price*1.62)
+        $ wcb_price = round(wcb_price*1.51)
+        news_reporter "Bad news for GGL holders, again..."
+        news_reporter "They're reporting a loss of 16.8\% in the last 5 years."
+        $ ggl_price = round(ggl_price*0.832)
     
     if year == 2050:
         news_reporter "In finance news, the S&P 500 has gone up by 11\% since last year. The market is doing great!"
@@ -101,8 +119,10 @@ label year_over:
         $ spy_price = round(spy_price*2)
         news_reporter "It is currently trading at [spy_price]."
 
-        news_reporter "In other news, WcBonalds reports a 91\% increase in stock value in the last 10 years."
-        $ wcb_price = round(wcb_price*1.91)
+        news_reporter "In other news, WcBonalds reports a 33\% increase in stock value in the last 10 years."
+        $ wcb_price = round(wcb_price*1.33)
+        news_reporter "GGL has tanked dramatically, reporting a loss of 31\% in the last 10 years."
+        $ ggl_price = round(ggl_price*0.69)
 
     if year == 2060:
         news_reporter "In finance news, the S&P 500 has gone up by 10\% since last year. The market continues to amaze!"
@@ -112,8 +132,11 @@ label year_over:
         $ spy_price = round(spy_price*1.96)
         news_reporter "It is currently trading at [spy_price]."
 
-        news_reporter "In other news, WcBonalds reports a 81\% increase in stock value in the last 10 years."
-        $ wcb_price = round(wcb_price*1.81)
+        news_reporter "In other news, WcBonalds reports a 19\% decrease in stock value in the last 10 years."
+        $ wcb_price = round(wcb_price*0.081)
+
+        news_reporter "GGL has absolutely tanked in recent years, reports a 33\% loss in stock value in the last 10 years."
+        $ ggl_price = round(ggl_price*0.66)
 
     if year == 2070:
         news_reporter "In finance news, the S&P 500 has gone up by 12\% since last year. It's certianly better than average year!"
@@ -123,8 +146,10 @@ label year_over:
         $ spy_price = round(spy_price*2.03)
         news_reporter "It is currently trading at [spy_price]."
 
-        news_reporter "In other news, WcBonalds reports a 74\% increase in stock value in the last 10 years."
-        $ wcb_price = round(wcb_price*1.74)
+        news_reporter "In other news, WcBonalds reports a 5.9\% increase in stock value in the last 10 years."
+        $ wcb_price = round(wcb_price*0.0941)
+        news_reporter "GGL has gone bankrupt,their stocks are useless."
+        $ ggl_price = 0
     
     if "WCB" in held_stocks:
         $ dividend_amt =  round(((wcb_price*10) *0.022))
@@ -151,8 +176,16 @@ label year_over:
 
 label collegeTimePass:
     $ spy_price = round(spy_price*1.11) #2026
-    $ spy_price = round( spy_price*1.092) #2027
-    $ wcb_price = round(wcb_price*1.095) #2028
+    $ spy_price = round(spy_price*1.092) #2027
+    $ spy_price = round(spy_price*1.095) #2028
+
+    $ wcb_price = round(wcb_price*1.1) #2026
+    $ wcb_price = round(wcb_price*1.09) #2027
+    $ wcb_price = round(wcb_price*1.04) #2028
+
+    $ ggl_price = round(ggl_price*1.011) #2026
+    $ ggl_price = round(ggl_price*0.97) #2027
+    $ ggl_price = round(ggl_price*0.967) #2028
 
     #You graduate in the middle of 2029.
     #Instant intrest on savings account

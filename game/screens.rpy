@@ -105,6 +105,8 @@ init python:
                 total_portfolio_value += quantity * spy_price
             elif stock == 'WCB':
                 total_portfolio_value += quantity * wcb_price
+            elif stock == 'GGL':
+                total_portfolio_value += quantity * ggl_price
         return round(total_portfolio_value)
 
 screen money_display():
@@ -133,7 +135,15 @@ screen money_display():
                 text "Total Stocks Value: ${:,.0f}".format(calculate_portfolio_value()) style "money_text"
                 for stock, quantity in held_stocks.items():
                     if quantity > 0:
-                        $ stock_price = (spy_price if stock == 'SPY' else wcb_price)
+
+                        if stock == 'SPY':
+                            $ stock_price = spy_price
+
+                        if stock == 'WCB':
+                            $ stock_price = wcb_price
+
+                        if stock == 'GGL':
+                            $ stock_price = ggl_price
                         # $ stock_value = quantity * stock_price
                         text "{}: {} shares at ${:,.0f} per share".format(stock, quantity, stock_price) style "money_text"
 
@@ -154,6 +164,7 @@ screen stock_buy_display():
                 spacing 5
                 text "SPY: ${}".format(spy_price) style "money_text"
                 text "WCB: ${}".format(wcb_price) style "money_text"
+                text "GGL: ${}".format(ggl_price) style "money_text"
 
 style stock_buy_text:
     color "#ffffff"

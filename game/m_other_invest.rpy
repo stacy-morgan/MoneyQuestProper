@@ -17,7 +17,8 @@ label other_invest:
 
     $ market_stocks = [
         "spy",
-        "wcb"
+        "wcb",
+        "ggl"
     ]
     #Show prices
     $ done = False
@@ -65,6 +66,25 @@ label other_invest:
                             money -= total_price
                         except KeyError:
                             held_stocks["WCB"] = shares_to_buy
+                    "Purchase successful."
+
+            if market_order == "ggl":
+                $ max_shares = int(money/ggl_price)
+                $ shares_to_buy = renpy.input("How many $GGL to buy @ $[ggl_price]? (Max: [max_shares] shares)")
+                $ shares_to_buy = int(shares_to_buy)
+                $ total_price = shares_to_buy * ggl_price
+                "$[ggl_price] x [shares_to_buy] shares: $[total_price]"
+                if total_price > money:
+                    "Robintrade alert: Insufficient funds in account."
+                else:
+                    "Your order has been placed..."
+                    python:
+                        try:
+                            shares_before = held_stocks["GGL"]
+                            held_stocks["GGL"] = shares_before + shares_to_buy
+                            money -= total_price
+                        except KeyError:
+                            held_stocks["GGL"] = shares_to_buy
                     "Purchase successful."
         else:
             if not done:

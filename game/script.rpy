@@ -61,6 +61,7 @@ label start:
 
     default spy_price = 500
     default wcb_price = 150
+    default ggl_price = 119
     default investment_level = 0
 
     define wage = 0
