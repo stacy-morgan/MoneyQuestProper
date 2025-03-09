@@ -25,10 +25,12 @@ init python:
 
 label wcb_chef_job:
     mc "I got the job."
+    $ job = "Chef"
     jump wcb_chef_game_loop
 
 label wcb_janitor_job:
     mc "I got the job."
+    $ job = "Janitor"
     jump wcb_janitor_game_loop
 
 label wcb_chef_game_loop:

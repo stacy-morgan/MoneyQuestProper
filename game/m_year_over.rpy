@@ -133,7 +133,7 @@ label year_over:
         $ money += dividend_amt
 
     mc "My rent is also due now. It cost of living around $24,000 per year."
-    if year < 2030:
+    if year < 2029:
         $ money -= 24000
     else:
         $ money -= (24000*5)
