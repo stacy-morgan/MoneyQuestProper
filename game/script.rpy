@@ -78,10 +78,10 @@ label choice1:
         "Retire":
             jump retirement
             
-        "Stacy":
+        "Stacy invest test":
             jump invest
 
-        "Stacy 2":
+        "Stacy Year Loop test":
             jump year_over_loop
 label broke_ass_bitch:
     mc "I am out of money!"
