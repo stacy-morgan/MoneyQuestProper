@@ -60,10 +60,10 @@ label year_over_loop:
 
     if year == 2030:
         news_reporter "In finance news, the S&P 500 has had a terrible year."
-        news_reporter "Losses have been reported to be up to 18\% since last year."
+        news_reporter "Losses have been reported to be up to 28\% since last year."
         news_reporter "Fears about global trade and technology uncertainty have led to a steep decline in trust and profitability. "
         news_reporter "At the beginning of the year, it was at [spy_price]."
-        $ spy_price = round( spy_price*0.82 , 2)
+        $ spy_price = round( spy_price*0.72 , 2)
         news_reporter "It is currently trading at [spy_price]."
         news_reporter "We will recover!"
         news_reporter "Experts may consider this a buying opportunity, ready to pounce later for higher profits."
@@ -71,26 +71,26 @@ label year_over_loop:
         $ wcb_price *= 0.097
 
     if year == 2035:
-        news_reporter "In finance news, the S&P 500 has gone up by 3.5\% since last year. The market is recovering."
-        news_reporter "Since the recession, it has gone back up by approximately 40\%."
+        news_reporter "In finance news, the S&P 500 has gone up by 9.3\% since last year. The market is recovering."
+        news_reporter "Since the recession, it has gone back up by approximately 89\%."
         news_reporter "From the recession, it was at [spy_price]."
-        $ spy_price = round( spy_price*1.4 , 2)
+        $ spy_price = round( spy_price*1.89 , 2)
         news_reporter "It is currently trading at [spy_price]."
-        news_reporter "Another great year for investors worldwide!"
+        news_reporter "It's been a solid 5 years for the market's recovery, and I, for one, couldn't be happier."
 
-        news_reporter "In other news, WcBonalds reports a 32\% increase in stock value in the last 5 years."
-        $ wcb_price *= 1.32
+        news_reporter "In other news, WcBonalds reports a 84\% increase in stock value in the last 5 years."
+        $ wcb_price *= 1.84
 
     if year == 2040:
-        news_reporter "In finance news, the S&P 500 has gone up by 7.1\% since last year. The market is really climbing back up."
-        news_reporter "Since the recession, it has gone back up by approximately 36\%."
+        news_reporter "In finance news, the S&P 500 has gone up by 10.3\% since last year. The market is really climbing back up."
+        news_reporter "Since the recession, it has gone back up by approximately 89\%."
         news_reporter "From the recession, it was at [spy_price]."
-        $ spy_price = round( spy_price*1.36 , 2)
+        $ spy_price = round( spy_price*1.89 , 2)
         news_reporter "It is currently trading at [spy_price]."
-        news_reporter "Another great year for investors worldwide!"
+        news_reporter "Not the highest growth, but it's still a way to double your money."
 
-        news_reporter "In other news, WcBonalds reports a 24\% increase in stock value in the last 5 years."
-        $ wcb_price *= 1.24
+        news_reporter "In other news, WcBonalds reports a 62\% increase in stock value in the last 5 years."
+        $ wcb_price *= 1.62
     
     if "WCB" in held_stocks:
         $ dividend_amt =  round(((wcb_price*10) *0.022),2)

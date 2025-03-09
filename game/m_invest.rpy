@@ -74,6 +74,8 @@ label invest:
         jump after_wcb_div
 
     label after_wcb_div:
+        "So now, I guess I just have to wait?"
+        "I'll have a bunch of money in like 20 years or so, I guess."
 
     
     jump end
