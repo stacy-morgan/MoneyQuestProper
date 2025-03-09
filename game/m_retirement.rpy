@@ -1,46 +1,71 @@
+init python:
+    def format_money(value):
+        return "${:,.0f}".format(value)
+
 label retirement:
-    mc "Man I've feel like it's time to retire!"
-    if money < 10000:
+    mc "I've been working for so long, I feel like it's time to retire!"
+    $ total_assets = money + calculate_portfolio_value()
+    $ total_assets_str = format_money(total_assets)
+    if total_assets < 10000:
         jump retireLess10000
-    elif money >= 10000:
-        if money < 100000:
-            jump retireBetween
-    elif money > 1000000:
+    elif total_assets < 100000:
+        jump retireBetween
+    else:
         jump retireComfortable
 
 label retireLess10000:
-    mc "Nuts, I should have taken some more care with saving money when I had the chance!"
+    scene bg broke_art_room
+    show character oldlily
+    mc "Aw man, I really should have taken some more care with saving money when I had the chance!"
+    mc "I only have [total_assets_str] in total assets. I'm basically broke."
     mc "I'm not sure what I can do now."
     mc "Hopefully it gets better in the future."
 
-    "5 years..."
+    scene black with fade
+    pause 1.0
+    show text "5 years later..." with dissolve
+    pause 2.0
+
+    scene bg lily_rip
     "Lily died homeless and broke..."
-    "Try again"
+    "R.I.P."
+    "You have lost, try to play again."
     jump end
-    #show a picture of a grave stone saying that im homeless or somthing like that
 
 label retireBetween:
+    scene bg winter_room
+    show character oldlily
     mc "Ok so I'm not too broke, but I don't have that much money saved up."
-    if house == True:
-        mc "Atleast I have this house, but I wish I could buy whatever I wanted."
-        mc "Maybe in the next life, I could make a lot more and travel the world!"
+    mc "I ended up with [total_assets_str] in total assets."
+    mc "At least I have this place, but I wish I could buy whatever I wanted."
+    mc "Maybe in the next life, I could make a lot more and travel the world!"
 
-        "Many Years Later"
+    scene black with fade
+    pause 1.0
+    show text "Many years later..." with dissolve
+    pause 2.0
 
-        "Lily died in her house, hoping to travel the world."
-
-        "Try again"
-        jump end
-
-    elif house == False:
-        jump retireLess10000
+    scene bg winter_room
+    "Lily died peacefully in her house,"
+    "She missed out on an opportunity to travel the world, but at least she had a place to live."
+    "Try to play again so Lily can travel the world in her retirement."
+    jump end
 
 label retireComfortable:
-    mc "Let's goo! I saved up over $100,000!"
-    mc "I can travel where I want, and live comfortably."
-    mc "This should last me a long while, but I still should be cautious."
-    mc "I can live a good life, but I'll use what I learned in my past to better my life."
+    scene bg expensive_room
+    show character oldlily
+    mc "Yay! I saved up a ton of money!"
+    mc "I ended up with [total_assets_str] in total assets."
 
-    "Lily lived a long a fufiling life."
-    "We won!"
+    scene bg beach_vacation
+    show character oldlily
+    mc "I can travel where I want, and live comfortably."
+
+    scene bg expensive_room
+    show character oldlily
+    mc "This should last me a long while, but I still should be cautious."
+    mc "I can have a long and relaxing retirement."
+
+    "Lily lived a long a fulfilling life."
+    "You won!"
     jump end
