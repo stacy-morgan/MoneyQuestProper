@@ -14,6 +14,8 @@ label wcb_chef_game_loop:
     jump expenses_chef
 
 label wcb_janitor_game_loop:
+    hide character animegirl
+    show character lily
     mc "Yay, I'm a WcBonalads janitor now *dies inside*"
     mc "I am making $16.50 an hour."
     jump expenses_janitor
