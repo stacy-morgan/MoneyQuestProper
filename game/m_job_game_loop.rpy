@@ -3,7 +3,7 @@ label retire_text:
     "I've put in a lot of work, and I've gotten paid well for it."
     "I think it's finally time to retire."
     "*sigh*..."
-    scene bg WcB
+    scene bg mcb
 
     mc "I just finished my last day..."
     W "Awww... we're going to miss you, Lily!"
@@ -88,7 +88,7 @@ label wcb_chef_game_loop:
     if year - wcb_year_start == 0:
         mc "I am a WcBonalds [job] now."
         mc "I'm making $[wage] an hour. Yippee!"
-    scene bg WcB
+    scene bg mcb
     "Work is exhausting."
     "But, I have to pay the bills."
     scene bg home
