@@ -7,8 +7,8 @@ label degree:
 
         "Computer Science":
             $ major = "Computer Science"
-        "Liberal Arts":
-            $ major = "Liberal Arts"
+        # "Liberal Arts":
+        #     $ major = "Liberal Arts"
         "Aerospace Engineering":
             $ major = "Aerospace Engineering"
     mc "Now I need to apply to colleges..."
@@ -36,7 +36,7 @@ label degree:
     scene bg graduation
     $ year += 4
     $ gone_to_college = True
-    call collegeTimePass from _call_collegeTimePass
+    call collegeTimePass
     $ money -= 46000
     mc "I can't believe I'm graduating already. I'm in the class of [year]!"
     mc "College was expensive, so I don't have much money left."

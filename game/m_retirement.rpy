@@ -3,10 +3,11 @@ init python:
         return "${:,.0f}".format(value)
 
 label retirement:
-    $ year = 2070
     mc "I've been working for so long, I feel like it's time to retire!"
     $ total_assets = money + calculate_portfolio_value()
     $ total_assets_str = format_money(total_assets)
+    if house:
+        jump retireComfortable
     if total_assets < 10000:
         jump retireLess10000
     elif total_assets < 100000:
@@ -55,7 +56,7 @@ label retireBetween:
 label retireComfortable:
     scene bg expensive_room
     show character oldlily
-    mc "Yay! I saved up a ton of money!"
+    mc "Yay! I saved up a ton of money and assets!"
     mc "I ended up with [total_assets_str] in total assets."
 
     scene bg beach_vacation

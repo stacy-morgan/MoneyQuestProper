@@ -10,47 +10,20 @@ label cs_job:
         "Machine Learning Engineer":
             $ job = "Machine Learning Engineer"
     $ salary = 120000
-    jump cs_game_loop
 
-label cs_game_loop:
     scene bg LearnToCode
     with fade
     mc "This is my work,"
     mc "Its quite boring, but I get paid $120,000 a year, minus the $24,000 in expenses."
-    jump cs_year_end
 
-label cs_year_end:
     scene black with fade
     pause 1.0
     show text "One year has passed..." with dissolve
     pause 2.0
-    call year_over from _call_year_over
+    call year_over
 
     scene bg LearnToCode
-    show character lily
-    mc "I have a lot of money now, maybe I should invest some."
-    
-    menu:
-        "Invest some money":
-            if noob:
-                $ calling_day1 = True
-                call day1_invest from _call_day1_invest
-                $ calling_day1 = False
-            else:
-                call other_invest from _call_other_invest
 
-            jump cs_boring
-        "I don't believe in the stock market":
-            jump cs_boring
-
-label cs_boring:
-    scene black with fade
-    pause 1.0
-    show text "Five years passed, and you are starting to get burnt out." with dissolve
-    call year_over from _call_year_over_1
-    pause 2.0
-    show text "You decide to use your hard earned money." with dissolve
-    pause 1.0
     jump batch_choices
 
 label art_job:
@@ -76,10 +49,12 @@ label artist_game_loop:
 
         "Get a job at WcBonalds":
             jump get_job
-        "Become an 3D modeler":
+        "Go homeless":
             jump model
 
 label model:
+    "kys"
+    jump end
     scene bg model_3d
     mc "Wow, I'm at work."
     mc "Its quite boring, but I get paid $60,000 a year, minus the $24,000 in expenses."
@@ -103,9 +78,8 @@ label aerospace_job:
             $ job = "Airplane Technician"
         "Rocket Engineer":
             $ job = "Rocket Engineer"
-    jump aerospace_game_loop
+    $ salary = 90000
 
-label aerospace_game_loop:
     if job == "Airplane Technician":
         scene bg airplane_office
         with fade
@@ -119,9 +93,8 @@ label aerospace_game_loop:
     scene black with fade
     pause 1.0
     show text "One year has passed..." with dissolve
-    $ money += 90000
     pause 2.0
-    call year_over from _call_year_over_2
+    call year_over
 
     if job == "Airplane Technician":
         scene bg airplane_office
@@ -129,7 +102,10 @@ label aerospace_game_loop:
     else:
         scene bg rocket_office
         with fade
+    
+    jump batch_choices
 
+label batch_choices:
     show character lily
     mc "I have a lot of money now, maybe I should invest some."
     
@@ -137,111 +113,78 @@ label aerospace_game_loop:
         "Invest some money":
             if noob:
                 $ calling_day1 = True
-                call day1_invest from _call_day1_invest_1
+                call day1_invest
                 $ calling_day1 = False
             else:
-                call other_invest from _call_other_invest_1
+                call other_invest
 
-            jump aero_boring
+            jump continue_0223
         "I don't believe in the stock market":
-            jump aero_boring
+            jump continue_0223
 
-label aero_boring:
+label continue_0223:
+
     scene black with fade
     pause 1.0
-    show text "Five years passed, and you are starting to get burnt out." with dissolve
-    $ money += (90000 * 5)
+    show text "Five years passed, and you earned a lot." with dissolve
     pause 2.0
+    call year_over
+
+    if year >= 2060:
+        jump retirement
+
+    scene black with fade
     show text "You decide to use your hard earned money." with dissolve
     pause 1.0
-    jump batch_choices
 
-label batch_choices:
     scene bg home
+
     menu:
         mc "I have a lot of money now, what should I do with it?"
 
         "Buy mansion ($10,000,000)" if money >= 10000000:
             jump mansion
-        "Go on vacation ($100,000)" if money >= 100000:
+        "Go on vacation ($10,000)" if money >= 10000:
             jump vacation
         "Invest money" if money >= 3000:
             if noob:
                 $ calling_day1 = True
-                call day1_invest from _call_day1_invest_2
+                call day1_invest
                 $ calling_day1 = False
             else:
-                call other_invest from _call_other_invest_2
+                call other_invest
 
             jump batch_choices_end
         "Keep working":
             jump batch_choices_end
+        "Retire" if money >= 1000000:
+            jump retirement
 
 label batch_choices_end:
     if job == "Airplane Technician" or job == "Rocket Engineer":
-        jump aerospace_game_loop
+        if job == "Airplane Technician":
+            scene bg airplane_office
+            with fade
+        else:
+            scene bg rocket_office
+            with fade
+        jump continue_0223
     elif job == "Database Manager" or job == "Full Stack Web Developer" or job == "Machine Learning Engineer":
-        jump cs_game_loop
+        scene bg LearnToCode
+        jump continue_0223
     else:
         jump artist_game_loop
 
 label mansion:
     $ money -= 10000000
-    scene black with fade
-    pause 1.0
-    show text "Risks: Buying a mansion comes at the risk of property tax and maintenance fees. Additionally, if you get laid off, then foreclosure is a possibility." with dissolve
-    pause 3.0
-    show text "Benefits: If the housing market booms, the house value appreciates, and you can live a happy life." with dissolve
-    pause 3.0
+    $ house = True
     scene bg mansion
-    "Buy, rent, or mortgage?"
-    menu:
-        "Buy":
-            $ house = True
-            jump ending_mansion
-        "Rent":
-            jump ending_mansion
-        "Mortgage":
-            jump ending_mansion
-
-label ending_mansion:
-    mc "I live in a mansion now!"
-    scene black with fade
-    pause 1.0
-    show text "A couple of decades passed..." with dissolve
-    pause 2.0
+    mc "I live in a super nice mansion now!"
+    mc "These windows are so pretty."
     jump retirement
 
 label vacation:
-    $ money -= 100000
-    scene black with fade
-    pause 1.0
-    show text "Risks: Spending too much results in lower savings for emergencies and you are prioritizing vacation over work."
-    pause 3.0
-    show text "Benefits: Vacation reduces stress and burn out, and you get to record your best memories."
-    pause 3.0
+    $ money -= 10000
     scene bg beach_vacation
-    
-    menu:
-        "Should you go on vacation?"
-
-        "Yes":
-            jump ending_vacation
-        "No":
-            jump ending_vacation2
-
-label ending_vacation:
-    mc "I went on vacation!"
-    scene black with fade
-    pause 1.0
-    show text "A couple of decades passed..." with dissolve
-    pause 2.0
-    jump retirement
-
-label ending_vacation2:
-    mc "I believe that I should focus on work and saving money."
-    scene black with fade
-    pause 1.0
-    show text "A couple of decades passed..." with dissolve
-    pause 2.0
-    jump retirement
+    mc "This was a super relaxing vacation, definitely worth the money!"
+    jump batch_choices_end
