@@ -5,6 +5,8 @@
 
 define e = Character("Eileen")
 define qqq = Character("???")
+define news_reporter = Character("News Report")
+define bank = Character("Bank Automated E-Mail")
 
 define mc = Character("Lily")
 

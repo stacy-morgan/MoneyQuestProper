@@ -1,4 +1,9 @@
 label invest:
+    $ spy_price = 5000
+    $ wcb_price = 300
+    $ savings_acct = 0
+    $ dividend_amt = 0
+
     mc "Lets buy some juicy stocks and ETFs."
     scene bg stocks_pc_green
     with Wipeleft(2)
@@ -57,9 +62,18 @@ label invest:
             jump no_wcb_div
     
     label wcb_div:
+        $ held_stocks.update({'WCB', 10})
         "Yeah, I'll put a bit into it."
         "If WcBonald's stock is about $200, I'll buy about 100 shares."
         "That way, the value will be enough to give me about $400 in dividends every year."
         "So, a little more than a dollar a day."
+        jump after_wcb_div
+
+    label no_wcb_div:
+        "Eh, I don't think it'll even give me that much. I'm better off putting it into a savings account."
+        jump after_wcb_div
+
+    label after_wcb_div:
+
     
     jump end
