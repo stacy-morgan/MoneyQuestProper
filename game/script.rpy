@@ -41,7 +41,7 @@ default year = 2025
 default job = "none"
 default house = False
 
-default spy_price = 5000
+default spy_price = 500
 default wcb_price = 150
 
 init python:
