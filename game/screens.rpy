@@ -95,6 +95,22 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+screen money_display():
+    zorder 100  # This ensures it appears on top of other elements
+    frame:
+        xalign 1.0
+        yalign 0.0
+        xpadding 10
+        ypadding 5
+        hbox:
+            spacing 10
+            text "Money: ${:,}".format(money) style "money_text"
+
+style money_text:
+    color "#ffffff"  # White text
+    # outlines [ (1, "#000000") ]  # Black outline for better visibility
+    size 22
+
 screen say(who, what):
 
     window:

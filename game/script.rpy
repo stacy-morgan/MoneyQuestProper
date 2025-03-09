@@ -35,6 +35,9 @@ default year = 2025
 default job = "none"
 default house = False
 
+init python:
+    config.overlay_screens.append("money_display")
+
 # The game starts here.
 
 label start:
