@@ -43,7 +43,7 @@ label invest:
     
     label yes_buy:
         $ held_stocks["SPY"] = 7
-        $ money -= 35000
+        $ money -= 3500
     label no_buy:
         mc "I won't buy any. It's risky and we haven't had a recession in a while."
 
