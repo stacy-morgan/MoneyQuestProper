@@ -64,6 +64,19 @@ label start:
     default tutorial_buy_sp = 0
     default tutorial_buy_wcb = 0
 
+    default sp_change = [
+        1.11,  # New Year 2026
+        1.092, # New Year 2027
+        1.095, # New Year 2028
+        1.081, # New Year 2029
+        0.72,  # New Year 2030
+        1.89,  # New Year 2035
+        1.76,  # New Year 2040
+        1.91,  # New Year 2050
+        1.96,  # New Year 2060
+        2.03   # New Year 2070
+    ]
+
     scene bg home
     show lily
 

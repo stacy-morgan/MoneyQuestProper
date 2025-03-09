@@ -94,6 +94,38 @@ label year_over_loop:
         news_reporter "In other news, WcBonalds reports a 62\% increase in stock value in the last 5 years."
         $ wcb_price = round(wcb_price*1.62)
     
+    if year == 2050:
+        news_reporter "In finance news, the S&P 500 has gone up by 11\% since last year. The market is doing great!"
+        news_reporter "In the last 10 years, it's doubled."
+        news_reporter "10 years ago, it was at [spy_price]."
+        $ spy_price = round(spy_price*2)
+        news_reporter "It is currently trading at [spy_price]."
+
+        news_reporter "In other news, WcBonalds reports a 91\% increase in stock value in the last 10 years."
+        $ wcb_price = round(wcb_price*1.91)
+
+    if year == 2060:
+        news_reporter "In finance news, the S&P 500 has gone up by 10\% since last year. The market continues to amaze!"
+        news_reporter "In the last 10 years, it's almost doubled again."
+        news_reporter "So close to doubling! It's up 96\%."
+        news_reporter "10 years ago, it was at [spy_price]."
+        $ spy_price = round(spy_price*1.96)
+        news_reporter "It is currently trading at [spy_price]."
+
+        news_reporter "In other news, WcBonalds reports a 81\% increase in stock value in the last 10 years."
+        $ wcb_price = round(wcb_price*1.81)
+
+    if year == 2070:
+        news_reporter "In finance news, the S&P 500 has gone up by 12\% since last year. It's certianly better than average year!"
+        news_reporter "In the last 10 years, it's more than doubled."
+        news_reporter "So close to doubling! It's up 103\%."
+        news_reporter "10 years ago, it was at [spy_price]."
+        $ spy_price = round(spy_price*2.03)
+        news_reporter "It is currently trading at [spy_price]."
+
+        news_reporter "In other news, WcBonalds reports a 74\% increase in stock value in the last 10 years."
+        $ wcb_price = round(wcb_price*1.74)
+    
     if "WCB" in held_stocks:
         $ dividend_amt =  round(((wcb_price*10) *0.022))
 
