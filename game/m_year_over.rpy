@@ -5,9 +5,12 @@ label year_over:
     if year < 2030:
         $ year += 1
         $ money += salary
-    else:
+    elif year == 2030 or year == 2035:
         $ year += 5
         $ money += salary*5
+    elif year > 2035:
+        $ year += 10
+        $ money += salary*10
 
     mc "Happy new year! It is now [year]."
     if money > 0:
@@ -63,8 +66,8 @@ label year_over:
         news_reporter "It is currently trading at [spy_price]."
         news_reporter "Another great year for investors worldwide!"
 
-        news_reporter "In other news, WcBonalds reports a 6\% increase in stock value this year."
-        $ wcb_price = round(wcb_price*1.06)
+        news_reporter "In other news, WcBonalds reports a 1\% increase in stock value this year."
+        $ wcb_price = round(wcb_price*1.01)
         news_reporter "GGL has fallen more this year, to nobody's surprise."
         news_reporter " The company reported losses of  3.1\% to date."
         $ ggl_price = round(ggl_price*0.969)
@@ -92,11 +95,10 @@ label year_over:
         news_reporter "It is currently trading at [spy_price]."
         news_reporter "It's been a solid 5 years for the market's recovery, and I, for one, couldn't be happier."
 
-        news_reporter "In other news, WcBonalds reports a 84\% increase in stock value in the last 5 years."
-        $ wcb_price = round(wcb_price*1.84)
-        news_reporter "GGL appears to be crawling back, reporting a gain of 2.3\% in the last 5 years."
-        news_reporter "Is this the start of their turnaround?"
-        $ ggl_price = round(ggl_price*1.023)
+        news_reporter "In other news, WcBonalds reports a 37\% increase in stock value in the last 5 years."
+        $ wcb_price = round(wcb_price*1.37)
+        news_reporter "GGL appears to be losing more, reporting a loss of 13\% in the last 5 years."
+        $ ggl_price = round(ggl_price*0.087)
 
     if year == 2040:
         news_reporter "In finance news, the S&P 500 has gone up by 10.3\% since last year. The market is really climbing back up."
@@ -157,12 +159,14 @@ label year_over:
         robintrade "You have been credited [dividend_amt] for your 10 shares in $WCB @ [wcb_price]."
         $ money += dividend_amt
 
-    if year <= 2030:
+    if year < 2030:
         $ money -= 24000
-    else:
+    elif year == 2035 or year == 2040:
         $ money -= (24000*5)
+    else:
+        $ money -= (24000*10)
 
-    mc "My rent is also due now. It cost of living around $24,000 per year."
+    mc "My rent is also due now. The cost of living is around $24,000 per year."
 
     if money < 0:
         scene bg atm
