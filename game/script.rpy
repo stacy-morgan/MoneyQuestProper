@@ -38,7 +38,6 @@ $ major = ""
 $ money = 0
 $ year = 2025
 $ job = "none"
-$ savings_acct = 0
 $ house = False
 
 init python:

@@ -4,8 +4,9 @@ label year_over_loop:
         savings_acct += dividend_amt
         robintrade("You have been credited ${dividend_amt} for your 10 shares in $WCB @ {wcb_price}.")
 
-    if 
-    bank ("Thank you for keeping a savings account with us. You have been credited ")
+    if money > 0:
+        money *= 1.095
+        bank ("Thank you for keeping a savings account with us. You have been credited ")
 
     if year == 2026:
         spy_price *= 1.11
@@ -21,8 +22,8 @@ label year_over_loop:
     if year == 2029:
         spy_price *= 1.081
 
-    if year = 2030:
+    if year == 2030:
         spy_price *= 0.8
 
-    if year = 2031:
+    if year == 2031:
         spy_price *= 1.1
