@@ -1,8 +1,8 @@
-label get_job:
-    if job == "":
-        mc "Without a college degree, there's only so much I can do."
-        mc "The local WcBonald's is hiring..."
+label get_job_with_intro:
+    mc "Without a college degree, there's only so much I can do."
+    mc "The local WcBonald's is hiring..."
 
+label get_job:
     scene bg mcb
     mc "I could get a job as a janitor, or as a regular cook."
     mc "But a chef would probably have more promotional opportunities."
@@ -50,6 +50,7 @@ label jji_a:
 label jji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
     scene bg home
+    show character lily
     mc "Aw man, I didn't get the job,"
     mc "They said I had to \'go back to high school chemistry\' or something."
     mc "I guess Mr. White wasn't the best teacher..."
@@ -90,6 +91,7 @@ label cji_a:
 label cji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
     scene bg home
+    show character lily
     mc "I wish I knew how to put the fries in the bag..."
     mc "Well, there's nothing I can do besides trying again."
     jump get_job

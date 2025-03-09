@@ -26,7 +26,7 @@ label yes_car:
     show character lily
     mc "My parents are furious!! Now they are going to kick me out :("
     mc "They told me to get a job. Ugh!"
-    jump get_job
+    jump get_job_with_intro
 
 label no_car:
     scene bg home

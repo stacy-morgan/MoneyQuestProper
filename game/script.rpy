@@ -70,7 +70,7 @@ label choice1:
             jump buy_car
 
         "Get a job":
-            jump get_job
+            jump get_job_with_intro
 
         "Bachelor's Degree":
             jump degree

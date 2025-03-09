@@ -102,13 +102,13 @@ screen money_display():
         yalign 0.0
         xpadding 10
         ypadding 5
-        hbox:
-            spacing 10
+        vbox:
+            spacing 5
+            text "Year: {}".format(year) style "money_text"
             text "Money: ${:,}".format(money) style "money_text"
 
 style money_text:
-    color "#ffffff"  # White text
-    # outlines [ (1, "#000000") ]  # Black outline for better visibility
+    color "#ffffff"
     size 22
 
 screen say(who, what):
