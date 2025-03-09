@@ -1,6 +1,6 @@
 label buy_car:
     scene bg nissan
-    mc "My grandpa gave me a car..."
+    mc "My Grandpa gave me a car..."
     mc "But it's so ugly."
     mc "I am going to get no girls with this car."
     mc "I want to get something fancy! I've heard that you can get a really fancy car for $50K."

@@ -7,9 +7,10 @@ label get_job:
     mc "I could get a job as a janitor, or as a regular cook."
     mc "But a chef would probably have more promotional opportunities."
     menu:
+        "Choose your job"
+
         "Janitor":
             jump wcb_janitor_job_interview
-
         "WcDonald's Chef":
             jump wcb_chef_job_interview
 
