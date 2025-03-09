@@ -1,8 +1,34 @@
+
+init python:
+    def calc_prices_and_amts():
+        global investment_level
+
+    def between(var, o1, o2):
+        if var => o1 and var <= o2:
+            return True
+        else:
+            return False
+
 label day1_invest:
     default dividend_amt = 0
     define fast_dissolve = Dissolve(0.5)
     define normal_dissolve = Dissolve(1.0)
     define slow_dissolve = Dissolve(2.0)
+
+    $ investment_Level = 0
+
+    if between(money, 0, 10000):
+        investment_level = 1
+
+    if money > 10001 and money <= 30000:
+        investment_level = 2
+
+    if money > 30001 and money <= 60000:
+        investment_level = 2
+
+    if money > 60000:
+        investment_level = 3
+
 
     mc "Lets buy some juicy stocks and ETFs."
     scene bg stocks_up
@@ -22,9 +48,12 @@ label day1_invest:
     mc "These {i}track{/i} the price of the market indexes. The symbol of the S&P ETF is SPY."
     mc "I'll put some money into it."
     mc "So, the ETF costs $500."
-    mc "With the $50,000 I have, in theory I could buy 100 of these ETFs and grow my money by so much!"
+    mc "With the money I have, in theory I could buy some of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
+<<<<<<< Updated upstream
     mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enough to live."
+=======
+>>>>>>> Stashed changes
     mc "My living expenses run me about $24,000 a year. So I'll need to get a job."
     menu:
         "Should I buy the S&P ETF?"

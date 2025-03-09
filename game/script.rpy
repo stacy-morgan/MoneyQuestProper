@@ -59,6 +59,7 @@ label start:
 
     default spy_price = 500
     default wcb_price = 150
+    default investment_level = 0
 
     scene bg home
     show lily
