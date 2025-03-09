@@ -1,4 +1,7 @@
 label year_over_loop:
+    scene bg winter_room
+    with Dissolve(2.0)
+
     if year < 2030:
         $ year += 1
     else:
@@ -6,16 +9,16 @@ label year_over_loop:
 
     mc "Happy new year! It is now [year]."
     if money > 0:
-        $ savings_add = (money*1.045)
-        bank "Thank you for keeping a savings account with Baldman Sacks."
+        $ savings_add = (money*0.045)
+        bank "Thank you for keeping a savings account with Baldman Sacks. Interest is 4.5\% APY for your savings account."
         bank "You have been credited $[savings_add]."
-        $ money += savings_add
+        $ money = round(money+savings_add, 2)
 
     if year == 2026:
         news_reporter "Happy New Year!"
         news_reporter "In finance news, the S&P 500 has gone up by 11\% since last year. Great returns!"
         news_reporter "At the beginning of the year, it was at $[spy_price]."
-        $ spy_price *= 1.11
+        $ spy_price = round( spy_price*1.11 , 2)
         news_reporter "It is currently trading at [spy_price]."
         news_reporter "Another great year for investors worldwide!"
 
@@ -26,20 +29,20 @@ label year_over_loop:
         news_reporter "In finance news, the S&P 500 has gone up by 9.2\% since last year. Great returns!"
         news_reporter "Although slightly below last year, we really can't complain."
         news_reporter "At the beginning of the year, it was at [spy_price]."
-        $ spy_price *= 1.092
+        $ spy_price = round( spy_price*1.092 , 2)
         news_reporter "It is currently trading at [spy_price]."
-        news_reporters "Another great year for investors worldwide!"
+        news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 9\% increase in stock value this year."
         $ wcb_price *= 1.09
 
     if year == 2028:
         news_reporter "In finance news, the S&P 500 has gone up by 9.5\% since last year. Great returns!"
-        news_reporter "This growth outpaced last year very slightly, but only by about 0.3%."
+        news_reporter "This growth outpaced last year very slightly, but only by about 0.3\%."
         news_reporter "At the beginning of the year, it was at [spy_price]."
-        $ spy_price *= 1.095
+        $ spy_price = round( spy_price*1.095 , 2)
         news_reporter "It is currently trading at [spy_price]."
-        news_reporters "Another great year for investors worldwide!"
+        news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 4\% increase in stock value this year."
         $ wcb_price *= 1.04
@@ -48,9 +51,9 @@ label year_over_loop:
         news_reporter "In finance news, the S&P 500 has gone up by 8.1\% since last year. Not as great, but it's still outpacing inflation."
         news_reporter "This growth is lower than the previous two years, below 2028 by 1.4%."
         news_reporter "At the beginning of the year, it was at [spy_price]."
-        $ spy_price *= 1.081
+        $ spy_price = round( spy_price*1.081 , 2)
         news_reporter "It is currently trading at [spy_price]."
-        news_reporters "Another great year for investors worldwide!"
+        news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 6\% increase in stock value this year."
         $ wcb_price *= 1.06
@@ -60,7 +63,7 @@ label year_over_loop:
         news_reporter "Losses have been reported to be up to 18\% since last year."
         news_reporter "Fears about global trade and technology uncertainty have led to a steep decline in trust and profitability. "
         news_reporter "At the beginning of the year, it was at [spy_price]."
-        $ spy_price *= 0.82
+        $ spy_price = round( spy_price*0.82 , 2)
         news_reporter "It is currently trading at [spy_price]."
         news_reporter "We will recover!"
         news_reporter "Experts may consider this a buying opportunity, ready to pounce later for higher profits."
@@ -69,19 +72,39 @@ label year_over_loop:
 
     if year == 2035:
         news_reporter "In finance news, the S&P 500 has gone up by 3.5\% since last year. The market is recovering."
-        news_reporter "Since the recession, it has gone back up by approximately 40%."
+        news_reporter "Since the recession, it has gone back up by approximately 40\%."
         news_reporter "From the recession, it was at [spy_price]."
-        $ spy_price *= 1.4
+        $ spy_price = round( spy_price*1.4 , 2)
         news_reporter "It is currently trading at [spy_price]."
-        news_reporters "Another great year for investors worldwide!"
+        news_reporter "Another great year for investors worldwide!"
 
-        news_reporter "In other news, WcBonalds reports a 32\% increase in stock value this year."
+        news_reporter "In other news, WcBonalds reports a 32\% increase in stock value in the last 5 years."
         $ wcb_price *= 1.32
+
+    if year == 2040:
+        news_reporter "In finance news, the S&P 500 has gone up by 7.1\% since last year. The market is really climbing back up."
+        news_reporter "Since the recession, it has gone back up by approximately 36\%."
+        news_reporter "From the recession, it was at [spy_price]."
+        $ spy_price = round( spy_price*1.36 , 2)
+        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "Another great year for investors worldwide!"
+
+        news_reporter "In other news, WcBonalds reports a 24\% increase in stock value in the last 5 years."
+        $ wcb_price *= 1.24
     
     if "WCB" in held_stocks:
-        $ dividend_amt =  ((wcb_price*10) *0.022)
+        $ dividend_amt =  round(((wcb_price*10) *0.022),2)
 
-        $ savings_acct += dividend_amt
         robintrade "You have been credited [dividend_amt] for your 10 shares in $WCB @ [wcb_price]."
+        $ money += dividend_amt
+
+    mc "My rent is also due now. It cost of living around $24,000 per year."
+    if year < 2030:
+        $ year += 1
+        $ money -= 24000
+    else:
+        $ year += 5
+        $ money -= (24000*5)
+
 
     jump year_over_loop
