@@ -73,5 +73,4 @@ label retireComfortable:
     mc "I can have a long and relaxing retirement."
 
     "Lily lived a long a fulfilling life."
-    "You won!"
     jump end
