@@ -1,5 +1,5 @@
 label year_over:
-    scene bg winter_roomr
+    scene bg winter_room
     with Dissolve(2.0)
 
     if year < 2030:
