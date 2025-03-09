@@ -24,7 +24,7 @@ label cs_year_end:
     pause 1.0
     show text "One year has passed..." with dissolve
     pause 2.0
-    call year_over from _call_year_over
+    call year_over
 
     scene bg LearnToCode
     show character lily
@@ -34,10 +34,10 @@ label cs_year_end:
         "Invest some money":
             if noob:
                 $ calling_day1 = True
-                call day1_invest from _call_day1_invest
+                call day1_invest
                 $ calling_day1 = False
             else:
-                call other_invest from _call_other_invest
+                call other_invest
 
             jump cs_boring
         "I don't believe in the stock market":
@@ -47,7 +47,7 @@ label cs_boring:
     scene black with fade
     pause 1.0
     show text "Five years passed, and you are starting to get burnt out." with dissolve
-    call year_over from _call_year_over_1
+    call year_over
     pause 2.0
     show text "You decide to use your hard earned money." with dissolve
     pause 1.0
@@ -121,7 +121,7 @@ label aerospace_game_loop:
     show text "One year has passed..." with dissolve
     $ money += 90000
     pause 2.0
-    call year_over from _call_year_over_2
+    call year_over
 
     if job == "Airplane Technician":
         scene bg airplane_office
@@ -137,10 +137,10 @@ label aerospace_game_loop:
         "Invest some money":
             if noob:
                 $ calling_day1 = True
-                call day1_invest from _call_day1_invest_1
+                call day1_invest
                 $ calling_day1 = False
             else:
-                call other_invest from _call_other_invest_1
+                call other_invest
 
             jump aero_boring
         "I don't believe in the stock market":
@@ -168,10 +168,10 @@ label batch_choices:
         "Invest money" if money >= 3000:
             if noob:
                 $ calling_day1 = True
-                call day1_invest from _call_day1_invest_2
+                call day1_invest
                 $ calling_day1 = False
             else:
-                call other_invest from _call_other_invest_2
+                call other_invest
 
             jump batch_choices_end
         "Keep working":

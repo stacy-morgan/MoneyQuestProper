@@ -51,7 +51,7 @@ label year_over:
 
     if year == 2029:
         news_reporter "In finance news, the S&P 500 has gone up by 8.1\% since last year. Not as great, but it's still outpacing inflation."
-        news_reporter "This growth is lower than the previous two years, below 2028 by 1.4%."
+        news_reporter "This growth is lower than the previous two years, below 2028 by 1.4\%."
         news_reporter "At the beginning of the year, it was at [spy_price]."
         $ spy_price = round( spy_price*1.081)
         news_reporter "It is currently trading at [spy_price]."

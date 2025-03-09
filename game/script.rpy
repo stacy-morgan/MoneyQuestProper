@@ -9,8 +9,8 @@ define news_reporter = Character("News Report")
 
 define robintrade = Character("Robintrade Automated E-Mail")
 define bank = Character("Bank Automated E-Mail")
-
 define mc = Character("Lily")
+define W = Character ("WcBonald's Employees")
 
 image bg nissan = "bg/Nissan.jpeg"
 image bg porsche = "bg/Porsche.jpeg"
