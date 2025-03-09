@@ -1,5 +1,6 @@
-init python:
-    def wage_calc():
+
+label wage_calc:
+    python:
         if job == "Janitor":
             if hs_job_level == 0:
                 wage = 16.5
@@ -17,28 +18,39 @@ init python:
             if hs_job_level == 2:
                 job = "Franchise Owner"
                 wage = 27
+    return
 
-    def salary_calc(wage):
-        hrs_per_week = 40
-        weekly_income = wage * hrs_per_week
-        yearly_income = weekly_income * 52
+label salary_calc:
+    $ hrs_per_week = 40
+    $ weekly_income = wage * hrs_per_week
+    $ yearly_income = weekly_income * 52
+    return
 
 label wcb_chef_job:
-    mc "I got the job."
+    mc "I got the chef job."
     $ job = "Chef"
+    $ wage = 20
+    call wage_calc
+    call salary_calc
+
     jump wcb_chef_game_loop
 
 label wcb_janitor_job:
-    mc "I got the job."
+    mc "I got the janitor job."
     $ job = "Janitor"
+    $ wage = 16.50
+
+    call wage_calc
+    call salary_calc
+    
     jump wcb_janitor_game_loop
 
 label wcb_chef_game_loop:
-    hide character animegirl
+    scene bg home
     show character lily
     if year - wcb_year_start == 0:
-        mc "I am a WcBonalds chef now."
-        mc "I'm making $20 an hour. Yippee!"
+        mc "I am a WcBonalds [job] now."
+        mc "I'm making $[salary] an hour. Yippee!"
     jump expenses
 
 label wcb_janitor_game_loop:
@@ -50,19 +62,21 @@ label wcb_janitor_game_loop:
     jump expenses
 
 label expenses:
+    call year_over
+
     scene black with fade
-    scene bg home
-    $ year += 1
+
     if year - wcb_year_start == 2:
         $ hs_job_level = 1
 
     if year - wcb_year_start == 5:
         $ hs_job_level = 2
 
-    $ wage = wage_calc()
-    $ money += salary_calc(wage)
+    call wage_calc
+    call salary_calc
+    "yapap"
     pause 2.0
-    call year_over
+    "3"
     jump wcb_chef_game_loop
 
 
