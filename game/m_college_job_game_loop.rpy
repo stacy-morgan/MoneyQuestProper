@@ -25,6 +25,7 @@ label cs_year_end:
     $ year += 1
     $ money += 96000
     pause 2.0
+    call year_over
 
     scene bg LearnToCode
     show character lily
@@ -51,7 +52,7 @@ label cs_boring:
     $ money += (96000 * 5)
     pause 2.0
     show text "You decide to use your hard earned money." with dissolve
-    pause 2.0
+    pause 1.0
     jump batch_choices
 
 label art_job:
@@ -92,7 +93,7 @@ label model_boring:
     show text "Years passed, and you are starting to get burnt out, and decide to go on vaction" with dissolve
     pause 2.0
     show text "However, as a 3D modeler, you do not make enough money." with dissolve
-    pause 2.0
+    pause 1.0
     jump vacation
 
 label aerospace_job:
@@ -115,30 +116,47 @@ label aerospace_game_loop:
         with fade
 
     mc "Wow, I'm at work."
-    mc "Its quite boring, but I get paid $150,000 a year, minus the $24,000 in expenses."
+    mc "Its quite boring, but I get paid $90,000 a year, minus the $24,000 in expenses."
+
+    scene black with fade
+    pause 1.0
+    show text "One year has passed..." with dissolve
+    $ year += 1
+    $ money += 66000
+    pause 2.0
     call year_over
-    if year != 2030:
-        mc "Wow, the S&P sure had some great returns."
+
+    if job == "Airplane Technician":
+        scene bg airplane_office
+        with fade
     else:
-        mc "Wow, the market is down right now."
+        scene bg rocket_office
+        with fade
 
-    if noob:
-        menu:
-            mc "Should learn to invest?"
-            "Yes":
+    show character lily
+    mc "I have a lot of money now, maybe I should invest some."
+    
+    menu:
+        "Invest some money":
+            if noob:
+                $ calling_day1 = True
                 call day1_invest
-            "No":
-                "I should keep what I have in savings."
-                "As long as I leave it in savings, I'll be okay."
+                $ calling_day1 = False
+            else:
+                call other_invest
 
-    jump aero_boring
+            jump aero_boring
+        "I don't believe in the stock market":
+            jump aero_boring
 
 label aero_boring:
     scene black with fade
     pause 1.0
-    show text "Years passed, and you are starting to get burnt out." with dissolve
+    show text "Five years passed, and you are starting to get burnt out." with dissolve
+    $ year += 5
+    $ money += (66000 * 5)
     pause 2.0
-    show text "You decide to spend your hard earned money." with dissolve
+    show text "You decide to use your hard earned money." with dissolve
     pause 1.0
     jump batch_choices
 
@@ -159,9 +177,17 @@ label batch_choices:
             else:
                 call other_invest
 
-            jump aerospace_game_loop
+            jump batch_choices_end
         "Keep working":
-            jump aerospace_game_loop
+            jump batch_choices_end
+
+label batch_choices_end:
+    if job == "Airplane Technician" or job == "Rocket Engineer":
+        jump aerospace_game_loop
+    elif job == "Database Manager" or job == "Full Stack Web Developer" or job == "Machine Learning Engineer":
+        jump cs_game_loop
+    else:
+        jump artist_game_loop
 
 label mansion:
     $ money -= 10000000
@@ -223,4 +249,3 @@ label ending_vacation2:
     show text "A couple of decades passed..." with dissolve
     pause 2.0
     jump retirement
-
