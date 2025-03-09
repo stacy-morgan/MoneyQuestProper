@@ -45,7 +45,7 @@ init python:
 # The game starts here.
 
 label start:
-    default debug = True
+    default debug = False
     default noob = True
     default salary = 0
     default held_stocks = {}
