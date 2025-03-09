@@ -97,7 +97,7 @@ label aerospace_game_loop:
 
     if noob:
         menu:
-        mc "Should learn to invest?"
+            mc "Should learn to invest?"
             "Yes":
                 call day1_invest
             "No":
@@ -125,9 +125,9 @@ label batch_choices:
             jump vacation
         "Invest money":
             call day1_invest
-            jump 
+            jump aerospace_game_loop
         "Keep working":
-            jump 
+            jump aerospace_game_loop
 
 label mansion:
     scene black with fade
