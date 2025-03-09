@@ -50,13 +50,23 @@ label artist_game_loop:
 
         "Get a job at WcBonalds":
             jump get_job
-        "Suck feet instead":
-            jump suck_feet
+        "Become an 3D modeler":
+            jump model
 
-label suck_feet:
-    qqq "Those feet look mighty suckable. ;-}"
-    qqq "MMMMhhhhh, ahhhhh, like that"
-    jump end
+label model:
+    scene bg model_3d
+    mc "Wow, I'm at work."
+    mc "Its quite boring, but I get paid $60,000 a year, minus the $24,000 in expenses."
+    jump model_boring
+
+label model_boring:
+    scene black with fade
+    pause 1.0
+    show text "Years passed, and you are starting to get burnt out, and decide to go on vaction" with dissolve
+    pause 2.0
+    show text "However, as a 3D modeler, you do not make enough money." with dissolve
+    pause 2.0
+    jump vacation
 
 label aerospace_job:
     mc "I heard that as an [major] major, I can work on planes or rockets!"
@@ -121,7 +131,7 @@ label ending_mansion:
     mc "I live in a mansion now!"
     scene black with fade
     pause 1.0
-    show text "A couple of centuries passed..." with dissolve
+    show text "A couple of decades passed..." with dissolve
     pause 2.0
     jump retirement
 
@@ -133,8 +143,10 @@ label vacation:
     show text "Benefits: Vacation reduces stress and burn out, and you get to record your best memories."
     pause 3.0
     scene bg beach_vacation
-    "Should you go on vacation?"
+    
     menu:
+        "Should you go on vacation?"
+
         "Yes":
             jump ending_vacation
         "No":
@@ -144,7 +156,7 @@ label ending_vacation:
     mc "I went on vacation!"
     scene black with fade
     pause 1.0
-    show text "A couple of centuries passed..." with dissolve
+    show text "A couple of decades passed..." with dissolve
     pause 2.0
     jump retirement
 
@@ -152,6 +164,7 @@ label ending_vacation2:
     mc "I believe that I should focus on work and saving money."
     scene black with fade
     pause 1.0
-    show text "A couple of centuries passed..." with dissolve
+    show text "A couple of decades passed..." with dissolve
     pause 2.0
     jump retirement
+
