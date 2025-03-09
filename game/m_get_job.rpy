@@ -45,6 +45,8 @@ label jji_a:
     e "We had an... incident regarding cleaning supplies at our previous location."
     e "As you know, it does not exist anymore. It was a biohazard."
     e "You're hired."
+    $ job = "Janitor"
+    $ wcb_year_start = year
     jump wcb_janitor_game_loop
 
 label jji_b:
@@ -86,6 +88,8 @@ label cji_a:
         easein 0.1 yoffset -4
         easeout 0.1 yoffset 0
     e "Correct! You're hired."
+    $ job = "Chef"
+    $ wcb_year_start = year
     jump wcb_chef_game_loop
 
 label cji_b:

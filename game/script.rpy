@@ -69,6 +69,9 @@ label start:
     default hasSecondaryJob = False
     default promoted = False
 
+    default hs_job_level = 1
+    default wcb_year_start = 0
+
     default sp_change = [
         1.11,  # New Year 2026
         1.092, # New Year 2027
