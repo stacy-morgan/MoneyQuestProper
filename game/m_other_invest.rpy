@@ -44,10 +44,10 @@ label other_invest:
                         try:
                             shares_before = held_stocks["SPY"]#Pre spy
                             held_stocks["SPY"] = shares_before + shares_to_buy
-                            money -= total_price
                         except KeyError:
                             held_stocks["SPY"] = shares_to_buy
-                        "Purchase successful."
+                        money -= total_price
+                    "Purchase successful."
 
             if market_order == "wcb":
                 $ max_shares = int(money/wcb_price)
@@ -63,9 +63,9 @@ label other_invest:
                         try:
                             shares_before = held_stocks["WCB"]
                             held_stocks["WCB"] = shares_before + shares_to_buy
-                            money -= total_price
                         except KeyError:
                             held_stocks["WCB"] = shares_to_buy
+                        money -= total_price
                     "Purchase successful."
 
             if market_order == "ggl":
@@ -85,6 +85,7 @@ label other_invest:
                             money -= total_price
                         except KeyError:
                             held_stocks["GGL"] = shares_to_buy
+                        money -= total_price
                     "Purchase successful."
         else:
             if not done:
