@@ -56,7 +56,7 @@ label year_over_loop:
         news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 6\% increase in stock value this year."
-        $ wcb_price = round(wcb_price*1.0.6)
+        $ wcb_price = round(wcb_price*1.06)
 
     if year == 2030:
         news_reporter "In finance news, the S&P 500 has had a terrible year."
