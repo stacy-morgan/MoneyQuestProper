@@ -148,7 +148,7 @@ label year_over:
         return
 
 
-    jump year_over_loop
+    return
 
 label collegeTimePass:
     $ spy_price = round(spy_price*1.11) #2026
