@@ -1,7 +1,3 @@
-$ hasSkillandInfluencer = False
-$ hasSecondaryJob = False
-$ promoted = False
-
 label wcb_chef_job:
     mc "I got the job."
     $ yrs_until_promotion = 2
@@ -48,6 +44,9 @@ label summary_janitor:
     pause 1.0
     show bg home
     "You make approximately $10k a year, which is not ideal."
+    "More income would be nice, but it might not be a great idea."
+    "Since you're not making much money, you won't have much to put in."
+    "Less in means lower returns, so you might be better off living on what you have now."
     "Would you like to get a side hobby?"
     menu:
         "Learn high-paying skills (Work 5 hours less)":
@@ -236,6 +235,7 @@ label emergency:
     $ money -= 10000
     scene black with fade
     "Years passed..."
+    $ year = 2070
     pause 1.0
     "Retirement"
     pause 2.0

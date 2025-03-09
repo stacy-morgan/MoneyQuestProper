@@ -66,6 +66,10 @@ label start:
     default tutorial_buy_wcb = 0
     default calling_day1 = False
 
+    default hasSkillandInfluencer = False
+    default hasSecondaryJob = False
+    default promoted = False
+
     default sp_change = [
         1.11,  # New Year 2026
         1.092, # New Year 2027
