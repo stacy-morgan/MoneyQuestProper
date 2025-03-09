@@ -14,16 +14,39 @@ label cs_job:
 label cs_game_loop:
     scene bg LearnToCode
     with fade
-    mc "Wow, I'm at work."
+    mc "This is my work,"
     mc "Its quite boring, but I get paid $120,000 a year, minus the $24,000 in expenses."
-    jump cs_boring
+    jump cs_year_end
+
+label cs_year_end:
+    scene black with fade
+    pause 1.0
+    show text "One year has passed..." with dissolve
+    $ year += 1
+    $ money += 96000
+    pause 2.0
+
+    scene bg LearnToCode
+    show character lily
+    mc "I have a lot of money now, maybe I should invest some."
+    
+    menu:
+        "Invest some money":
+            $ calling_day1 = True
+            call day1_invest
+            $ calling_day1 = False
+            jump cs_boring
+        "I don't believe in the stock market":
+            jump cs_boring
 
 label cs_boring:
     scene black with fade
     pause 1.0
-    show text "Years passed, and you are starting to get burnt out." with dissolve
+    show text "Five years passed, and you are starting to get burnt out." with dissolve
+    $ year += 5
+    $ money += (96000 * 5)
     pause 2.0
-    show text "You decide to spend your hard earned money." with dissolve
+    show text "You decide to use your hard earned money." with dissolve
     pause 2.0
     jump batch_choices
 
@@ -117,7 +140,7 @@ label aero_boring:
 
 label batch_choices:
     scene bg home
-    mc "I have many choices to make."
+    mc "I have a lot of money now, what should I do with it?"
     menu:
         "Buy mansion ($10,000,000)":
             jump mansion

@@ -36,10 +36,10 @@ label degree:
     scene bg graduation
     $ year += 4
     $ gone_to_college = True
-    mc "I can't believe I'm graduating already. I'm in the class of [year]!"
-    mc "I haven't been spending much lately..."
-    mc "My savings account has probably given me a lot of interest."
+    $ money -= 46000
     call collegeTimePass
+    mc "I can't believe I'm graduating already. I'm in the class of [year]!"
+    mc "College was expensive, so I don't have much money left."
     mc "What will I do with my [major] degree?"
 
     show character lily
