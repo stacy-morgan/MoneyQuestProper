@@ -106,5 +106,11 @@ label year_over_loop:
         $ year += 5
         $ money -= (24000*5)
 
+    if money < 0:
+        mc "I have no more money!"
+        mc "I guess I have to move back in with my parents."
+        mc "I should have been financially smarter, I guess."
+        return
+
 
     jump year_over_loop
