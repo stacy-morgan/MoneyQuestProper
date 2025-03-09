@@ -99,7 +99,8 @@ label wcb_chef_game_loop:
     elif year == 2070:
         jump retire_text
     else:
-        call ask_about_investing
+        if money >= 3000:
+            call ask_about_investing
 
     jump expenses
 
@@ -115,13 +116,15 @@ label wcb_janitor_game_loop:
 
     if year == 2060:
         mc "I am thinking about retiring soon."
-        call ask_about_investing
+        if money >= 3000:
+            call ask_about_investing
     
     elif year == 2070:
         jump retire_text
     
     else:
-        call ask_about_investing
+        if money >= 3000:
+            call ask_about_investing
 
     jump expenses
 
