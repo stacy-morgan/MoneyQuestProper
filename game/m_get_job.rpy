@@ -47,7 +47,7 @@ label jji_a:
     e "You're hired."
     $ wcb_year_start = year
     $ job = "Janitor"
-    jump wcb_janitor_game_loop
+    jump wcb_janitor_job
 
 label jji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."
@@ -90,7 +90,7 @@ label cji_a:
     e "Correct! You're hired."
     $ job = "Chef"
     $ wcb_year_start = year
-    jump wcb_chef_game_loop
+    jump wcb_chef_job
 
 label cji_b:
     e "That's... not true. Unfortunately, we will not proceed with your hiring at this time."

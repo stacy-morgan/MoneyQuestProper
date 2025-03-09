@@ -23,7 +23,7 @@ label wage_calc:
 label salary_calc:
     $ hrs_per_week = 40
     $ weekly_income = wage * hrs_per_week
-    $ yearly_income = weekly_income * 52
+    $ salary = weekly_income * 52
     return
 
 label wcb_chef_job:
@@ -50,7 +50,7 @@ label wcb_chef_game_loop:
     show character lily
     if year - wcb_year_start == 0:
         mc "I am a WcBonalds [job] now."
-        mc "I'm making $[salary] an hour. Yippee!"
+        mc "I'm making $[wage] an hour. Yippee!"
     jump expenses
 
 label wcb_janitor_game_loop:
@@ -58,7 +58,7 @@ label wcb_janitor_game_loop:
     show character lily
     if year - wcb_year_start == 0:
         mc "Yay, I'm a WcBonalads janitor now *dies inside*"
-        mc "I am making $16.50 an hour."
+        mc "I am making $[wage]an hour."
     jump expenses
 
 label expenses:
