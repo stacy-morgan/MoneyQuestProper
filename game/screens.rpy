@@ -118,7 +118,19 @@ screen money_display():
             spacing 5
             text "Year: {}".format(year) style "money_text"
             text "Money: ${:,.2f}".format(money) style "money_text"
-            text "Stocks Value: ${:,.2f}".format(calculate_portfolio_value()) style "money_text"
+    if calculate_portfolio_value() > 0:
+        frame:
+            xalign 0.0
+            yalign 0.0
+            xpadding 10
+            ypadding 5
+            vbox:
+                spacing 5
+                text "Stocks Value: ${:,.2f}".format(calculate_portfolio_value()) style "money_text"
+                for stock, quantity in held_stocks.items():
+                    if quantity > 0:
+                        $ stock_value = quantity * (spy_price if stock == 'SPY' else wcb_price)
+                        text "{}: {} shares (${:,.2f})".format(stock, quantity, stock_value) style "money_text"
 
 style money_text:
     color "#ffffff"
