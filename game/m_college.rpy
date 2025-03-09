@@ -21,7 +21,7 @@ label degree:
     scene bg home
     show character lily
 
-    mc "I got accepted to Sigma College!"
+    mc "I got accepted to Compounding Knowledge University!"
     mc "I can't wait to learn [major] there."
 
     scene bg college
