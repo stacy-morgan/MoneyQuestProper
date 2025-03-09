@@ -8,45 +8,44 @@ label invest:
     scene bg stocks_up
     with normal_dissolve
     mc "I don't know much about stocks..."
-    mc "I've heard from my grandpa's ramblings that some \"Baldman Socks\" EFT or whatever is good to invest in."
-    mc "Or was it ETF?"
+    mc "I've heard from my grandpa's ramblings that some \"S&P 500\" ETF or whatever is good to invest in."
     mc "He said it's a good idea to invest in the S&P 500, but there doesn't seem to be a way to do that."
     mc "It says it costs 5,000 dollars to invest? Wow, it must really only be for rich people."
     scene bg stocks_up
     with normal_dissolve
     mc "Ok, it seems like my account setup went through ok."
     mc "All my friends are using Robintrade, so I think I'll set it up with this. "
-    mc "Setup went good..."
-    mc "It's asking if I'm a beginner invester? Yes, I certainly am."
-    mc "It's so helpful that they have a little tour here on how to navigate the stock market."
+    mc "This app is really helpful, it has a tour here on how to navigate the stock market."
     mc "..."
-    mc "So you {i}can't{/i} invest into the S&P 500 and Nasdaq-100 directly? That makes sense."
-    mc "With a price of $5,000, it makes sense that you can't buy a lot of these."
+    mc "So you {i}can't{/i} invest into the S&P 500 and Nasdaq-100 directly..."
     mc "Instead, it seems like we have to use an \"exchange-traded fund\", or ETF."
-    mc "These {i}track{/i} the price of the market indexes."
-    mc "I guess I'll buy some, but I heard investment advisors say that you should diversify a little bit."
-    mc "Maybe I'll buy some bonds, but I don't want to put too much money into it right now in case it goes down."
-    mc "Because then it would be more of a buying opportunity."
-    mc "You don't want to put too much in at once, because then you can't capitalize on a lower price if it falls a bit tomorrow."
+    mc "These {i}track{/i} the price of the market indexes. The symbol of the S&P ETF is SPY."
+    mc "I'll put some money into it."
     mc "So, the ETF costs $500."
     mc "With the $50,000 I have, in theory I could buy 100 of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
-    mc "So I'll probably just buy about 10."
-    mc "My living expenses run me about $24,000 a year."
-    mc "So I {i}could{/i} invest also into some other stuff..."
+    mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enouhg to live."
+    mc "My living expenses run me about $24,000 a year. So I'll need to get a job."
     menu:
-        "Should I buy S&P ETF?"
+        "Should I buy the S&P ETF?"
+
         "Yes":
             jump yes_buy
         "No":
             jump no_buy
     
     label yes_buy:
-        $ held_stocks["SPY"] = 7
-        $ money -= 3500
-    label no_buy:
-        mc "I won't buy any. It's risky and we haven't had a recession in a while."
+        $ held_stocks["SPY"] = 75
+        $ money -= 35000
+        jump post_sp_buy
 
+    label no_buy:
+        mc "I won't buy any. It's risky and the price is kind of high."
+        mc "It's gone up so much and it might come down a lot too."
+        mc "If I buy now, I could end up losing a lot."
+        jump post_sp_buy
+
+label post_sp_buy:
     mc "I've heard about dividends and how they're basically free money for holding a stock..."
     mc "Seems like the fast food giant $WCB pays a dividend of about 2.2\%."
 
@@ -57,18 +56,20 @@ label invest:
     mc "It would probably be safest to only get a little bit of dividend stock, or not at all."
     menu:
         "Should I buy some WcBonald's dividend stock?"
+
         "Yes! I love free money.":
             jump wcb_div
         "No, I'll play it a bit safer.":
             jump no_wcb_div
     
     label wcb_div:
-        $ held_stocks["WCB"] = 100
-        $ money -= (wcb_price)*100
+        $ held_stocks["WCB"] = 50
+        $ money -= (wcb_price)*50
         "Yeah, I'll put a bit into it."
-        "If WcBonald's stock is about $200, I'll buy about 100 shares."
-        "That way, the value will be enough to give me about $400 in dividends every year."
-        "So, a little more than a dollar a day."
+        "If WcBonald's stock is about $200, I'll buy about 50 shares."
+        "That way, the value will be enough to give me about $300 in dividends every year."
+        "So, a little less than a dollar a day."
+        "And I can sell this later for more profit."
         jump after_wcb_div
 
     label no_wcb_div:
@@ -78,6 +79,21 @@ label invest:
     label after_wcb_div:
         "So now, I guess I just have to wait?"
         "I'll have a bunch of money in like 20 years or so, I guess."
+        "Hopefully this turns out well!"
 
-    
-    jump end
+        scene bg home
+        with wipeleft
+        "Now that my money is invested, I should probably get a job."
+        "Or I could take out loans for a job..."
+        "I've applied to some, but the cost has really been holding me back."
+        "Financial aid could help and then I could take out loans for something better."
+        menu:
+            "What should I do?"
+            
+            "Get a job":
+                jump get_job_with_intro
+            
+            "Go to college.":
+                jump degree
+
+
