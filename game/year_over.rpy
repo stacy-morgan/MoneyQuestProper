@@ -125,8 +125,13 @@ label collegeTimePass:
 
     #You graduate in the middle of 2029.
     #Instant intrest on savings account
-    #$ for x in range(3):
-    #    $ savings_add = round((money*0.045))
-    #    $ money += savings_add
+    $ savings_add = round((money*0.045))
+    $ money += savings_add
+
+    $ savings_add = round((money*0.045))
+    $ money += savings_add
+
+    $ savings_add = round((money*0.045))
+    $ money += savings_add
 
         
