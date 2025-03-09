@@ -84,6 +84,9 @@ label debug_choice:
         "Invest":
             jump day1_invest
 
+        "Other Invest":
+            jump other_invest
+
         #"Stacy Year Loop test":
         #   jump year_over_loop
 label broke_ass_bitch:

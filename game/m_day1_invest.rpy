@@ -1,4 +1,4 @@
-label day1_invest:
+label m_invest:
     default dividend_amt = 0
     define fast_dissolve = Dissolve(0.5)
     define normal_dissolve = Dissolve(1.0)
