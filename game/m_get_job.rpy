@@ -11,7 +11,7 @@ label get_job:
 
         "Janitor":
             jump wcb_janitor_job_interview
-        "WcDonald's Chef":
+        "WcBonald's Chef":
             jump wcb_chef_job_interview
 
 label wcb_janitor_job_interview:
@@ -22,10 +22,10 @@ label wcb_janitor_job_interview:
     menu:
         e "What do you get when you mix ammonia and bleach?"
 
-        "A) Mustard gas":
+        "Mustard gas":
             jump jji_a
 
-        "B) A very strong soap":
+        "A very strong soap":
             jump jji_b
 
 label jji_a:
@@ -66,12 +66,12 @@ label wcb_chef_job_interview:
     qqq "Hi, I'm Eileen! I'll be interviewing you today."
     e "The question is..."
     menu: 
-        e "Fill in the blank. Put the _____ in the bag?"
+        e "Fill in the blank. Put the _____ in the bag."
 
-        "A) fries":
+        "fries":
             jump cji_a
 
-        "B) money":
+        "money":
             jump cji_b
     jump end
 

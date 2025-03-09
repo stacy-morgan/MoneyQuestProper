@@ -20,7 +20,7 @@ label cs_job:
     pause 1.0
     show text "One year has passed..." with dissolve
     pause 2.0
-    call year_over
+    call year_over from _call_year_over
 
     scene bg LearnToCode
 
@@ -94,7 +94,7 @@ label aerospace_job:
     pause 1.0
     show text "One year has passed..." with dissolve
     pause 2.0
-    call year_over
+    call year_over from _call_year_over_1
 
     if job == "Airplane Technician":
         scene bg airplane_office
@@ -113,10 +113,10 @@ label batch_choices:
         "Invest some money":
             if noob:
                 $ calling_day1 = True
-                call day1_invest
+                call day1_invest from _call_day1_invest
                 $ calling_day1 = False
             else:
-                call other_invest
+                call other_invest from _call_other_invest
 
             jump continue_0223
         "I don't believe in the stock market":
@@ -128,7 +128,7 @@ label continue_0223:
     pause 1.0
     show text "Five years passed, and you earned a lot." with dissolve
     pause 2.0
-    call year_over
+    call year_over from _call_year_over_2
 
     if year >= 2060:
         jump retirement
@@ -151,10 +151,10 @@ label continue_0223:
         "Invest money" if money >= 3000:
             if noob:
                 $ calling_day1 = True
-                call day1_invest
+                call day1_invest from _call_day1_invest_1
                 $ calling_day1 = False
             else:
-                call other_invest
+                call other_invest from _call_other_invest_1
 
             jump batch_choices_end
         "Keep working":
