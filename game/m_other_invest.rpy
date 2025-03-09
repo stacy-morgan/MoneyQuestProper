@@ -82,7 +82,6 @@ label other_invest:
                         try:
                             shares_before = held_stocks["GGL"]
                             held_stocks["GGL"] = shares_before + shares_to_buy
-                            money -= total_price
                         except KeyError:
                             held_stocks["GGL"] = shares_to_buy
                         money -= total_price
