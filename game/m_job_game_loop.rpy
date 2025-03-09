@@ -97,7 +97,7 @@ label wcb_chef_game_loop:
     if year == 2060:
         mc "I am thinking about retiring soon."
     elif year == 2070:
-        jump retire_text:
+        jump retire_text
     else:
         if money >= 3000:
             call ask_about_investing
