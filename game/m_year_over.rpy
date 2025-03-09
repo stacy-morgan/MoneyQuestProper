@@ -1,5 +1,5 @@
 label year_over:
-    scene bg winter_room
+    scene bg winter_roomr
     with Dissolve(2.0)
 
     if year < 2030:
@@ -156,7 +156,7 @@ label year_over:
     if "WCB" in held_stocks:
         $ dividend_amt =  round(((wcb_price*10) *0.022))
 
-        robintrade "You have been credited [dividend_amt] for your 10 shares in $WCB @ [wcb_price]."
+        robintrade "You have been credited $[dividend_amt] for your 10 shares in $WCB @ [wcb_price]."
         $ money += dividend_amt
 
     if year <= 2030:
