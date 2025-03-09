@@ -1,17 +1,28 @@
 
 init python:
-    def calc_prices_and_amts():
-        global investment_level
-        if investment_level == 1:
-            pass
-
     def between(var, o1, o2):
         if var >= o1 and var <= o2:
             return True
         else:
             return False
 
+    def calc_prices_and_amts():
+        global investment_level
+        global tutorial_buy_sp
+        if investment_level == 1:
+                tutorial_buy_sp = 1
+        if investment_level == 2:
+            tutorial_buy_sp = 5
+        if investment_level == 3:
+            tutorial_buy_sp = 15
+        if investment_level == 4:
+            tutorial_buy_sp = 30
+
+
 label day1_invest:
+    if money < sp_price:
+        "You have broken the game, you should never see this message."
+        return
     default dividend_amt = 0
     define fast_dissolve = Dissolve(0.5)
     define normal_dissolve = Dissolve(1.0)
@@ -19,17 +30,17 @@ label day1_invest:
 
     $ investment_Level = 0
 
-    if between(money, 0, 10000):
+    if between(money, 3000, 10000):
         $ investment_level = 1
 
     if between(money, 10001, 30000):
         $ investment_level = 2
 
     if between(money, 31000, 60000):
-        $ investment_level = 2
+        $ investment_level = 3
 
     if between > 60000:
-        $ investment_level = 3
+        $ investment_level = 4
 
 
     mc "Lets buy some juicy stocks and ETFs."
@@ -49,12 +60,11 @@ label day1_invest:
     mc "Instead, it seems like we have to use an \"exchange-traded fund\", or ETF."
     mc "These {i}track{/i} the price of the market indexes. The symbol of the S&P ETF is SPY."
     mc "I'll put some money into it."
-    mc "So, the ETF costs $500."
+    mc "So, the ETF costs {spy_price}."
     mc "With the money I have, in theory I could buy some of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
 
-    mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enough to live."
-    mc "My living expenses run me about $24,000 a year. So I'll need to get a job."
+    mc "So I'll probably just buy about {tutorial_buy_sp}. I don't want to put too much in, otherwise I won't have enough to live."
     menu:
         "Should I buy the S&P ETF?"
 
@@ -64,8 +74,8 @@ label day1_invest:
             jump no_buy
     
     label yes_buy:
-        $ held_stocks["SPY"] = 75
-        $ money -= 35000
+        $ held_stocks["SPY"] = {tutorial_buy_sp}
+        $ money -= (tutorial_buy_sp * sp_price)
         jump post_sp_buy
 
     label no_buy:
@@ -81,8 +91,9 @@ label post_sp_buy:
     mc "So for the amount of stock you're holding, you can get paid 2.2\% of that every year."
     mc "But based on these historical S&P graphs, the returns are a lot more per year."
     mc "And the dividends can be risky because they can change the dividend return or the stock could be more volatile than the market as a whole."
-
-    mc "It would probably be safest to only get a little bit of dividend stock, or not at all."
+    mc "It's also good to just diversify a llittle bit."
+    mc "Seems like WcDonald's stock costs [wcd_cost]."
+    mc "It would probably be safe to get a bit of another stock, and dividends aren't bad too."
     menu:
         "Should I buy some WcBonald's dividend stock?"
 
@@ -92,13 +103,11 @@ label post_sp_buy:
             jump no_wcb_div
     
     label wcb_div:
-        $ held_stocks["WCB"] = 50
-        $ money -= (wcb_price)*50
+        $ held_stocks["WCB"] = 2
+        $ money -= (wcb_price)*2
         "Yeah, I'll put a bit into it."
-        "If WcBonald's stock is about $200, I'll buy about 50 shares."
-        "That way, the value will be enough to give me about $300 in dividends every year."
-        "So, a little less than a dollar a day."
-        "And I can sell this later for more profit."
+        "Only 2 shares, though."
+        "These dividends aren't that good, and I just want to invest in something that I've actually heard of to start."
         jump after_wcb_div
 
     label no_wcb_div:

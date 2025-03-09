@@ -61,6 +61,9 @@ label start:
     default wcb_price = 150
     default investment_level = 0
 
+    default tutorial_buy_sp = 0
+    default tutorial_buy_wcb = 0
+
     scene bg home
     show lily
 
