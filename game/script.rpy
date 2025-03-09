@@ -54,11 +54,13 @@ label start:
     default major = ""
     default money = 0
     default year = 2025
-    default job = "none"
+    default job = "None"
     default house = False
     default show_stock_prices = False
     default gone_to_college = False
-
+    
+    default just_got_promoted = False
+    default old_wage = 0
     default spy_price = 500
     default wcb_price = 150
     default ggl_price = 119

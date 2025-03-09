@@ -44,17 +44,27 @@ label wage_calc:
             if hs_job_level == 0:
                 wage = 16.5
             if hs_job_level >= 1:
+                if job == "Janitor":
+                    old_wage = 16.5
+                    just_got_promoted = True
+                job = "Janitor+"
                 wage = 17.2
         
-        if job == "Chef":
+        if job == "Chef" or job == "Head Chef":
             if hs_job_level == 0:
                 wage = 20
             
             if hs_job_level == 1:
+                if job == "Chef":
+                    old_wage = 20
+                    just_got_promoted = True
                 job = "Head Chef"
                 wage = 23.5
             
             if hs_job_level == 2:
+                if job == "Head Chef":
+                    old_wage = 23.5
+                    just_got_promoted = True
                 job = "Franchise Owner"
                 wage = 27
     return
@@ -95,6 +105,12 @@ label wcb_chef_game_loop:
     "But, I have to pay the bills."
     scene bg home
     
+
+    if just_got_promoted:
+            "I just got a promotion!"
+            "I went from to $[old_wage] to $[wage]."
+            $ just_got_promoted = False
+
     if year == 2060:
         mc "I am thinking about retiring soon."
     elif year == 2070:
@@ -102,6 +118,7 @@ label wcb_chef_game_loop:
     else:
         if money >= 3000:
             call ask_about_investing
+
 
     jump expenses
 
@@ -114,6 +131,10 @@ label wcb_janitor_game_loop:
             mc "I am making $16.50 an hour."
         else:
             mc "I am making $[wage] an hour."
+
+        if just_got_promoted:
+            "I just got a promotion!"
+            "I went from to $[old_wage] to $[wage]."
 
     if year == 2060:
         mc "I am thinking about retiring soon."
@@ -137,7 +158,7 @@ label expenses:
     if year - wcb_year_start == 2:
         $ hs_job_level = 1
 
-    if year - wcb_year_start == 5:
+    if year - wcb_year_start > 4:
         $ hs_job_level = 2
 
     call wage_calc from _call_wage_calc_2
