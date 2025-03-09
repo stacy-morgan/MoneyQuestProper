@@ -74,5 +74,7 @@ label retireComfortable:
     if total_assets > persistent.highscore:
         $ persistent.highscore = total_assets
     "Lily lived a long a fulfilling life."
-    "High Score: [persistent.highscore]"
+    $ temp = persistent.highscore
+    $ temp = format_money(temp)
+    "High Score: $[temp]"
     jump end
