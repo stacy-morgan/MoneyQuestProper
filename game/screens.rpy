@@ -95,6 +95,18 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+
+# Function to calculate the total portfolio value
+init python:
+    def calculate_portfolio_value():
+        total_portfolio_value = 0.0
+        for stock, quantity in held_stocks.items():
+            if stock == 'SPY':
+                total_portfolio_value += quantity * spy_price
+            elif stock == 'WCB':
+                total_portfolio_value += quantity * wcb_price
+        return round(total_portfolio_value, 2)
+
 screen money_display():
     zorder 100  # This ensures it appears on top of other elements
     frame:
@@ -106,6 +118,7 @@ screen money_display():
             spacing 5
             text "Year: {}".format(year) style "money_text"
             text "Money: ${:,}".format(money) style "money_text"
+            text "Stocks Value: ${:,}".format(calculate_portfolio_value()) style "money_text"
 
 style money_text:
     color "#ffffff"
