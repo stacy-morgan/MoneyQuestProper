@@ -132,11 +132,12 @@ label year_over:
         robintrade "You have been credited [dividend_amt] for your 10 shares in $WCB @ [wcb_price]."
         $ money += dividend_amt
 
-    mc "My rent is also due now. It cost of living around $24,000 per year."
-    if year < 2029:
+    if year <= 2030:
         $ money -= 24000
     else:
         $ money -= (24000*5)
+
+    mc "My rent is also due now. It cost of living around $24,000 per year."
 
     if money < 0:
         scene bg atm

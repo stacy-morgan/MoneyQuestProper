@@ -9,6 +9,7 @@ label cs_job:
             $ job = "Full Stack Web Developer"
         "Machine Learning Engineer":
             $ job = "Machine Learning Engineer"
+    $ salary = 120000
     jump cs_game_loop
 
 label cs_game_loop:
@@ -22,8 +23,6 @@ label cs_year_end:
     scene black with fade
     pause 1.0
     show text "One year has passed..." with dissolve
-    $ year += 1
-    $ money += 96000
     pause 2.0
     call year_over
 
@@ -48,8 +47,7 @@ label cs_boring:
     scene black with fade
     pause 1.0
     show text "Five years passed, and you are starting to get burnt out." with dissolve
-    $ year += 5
-    $ money += (96000 * 5)
+    call year_over
     pause 2.0
     show text "You decide to use your hard earned money." with dissolve
     pause 1.0
@@ -121,8 +119,7 @@ label aerospace_game_loop:
     scene black with fade
     pause 1.0
     show text "One year has passed..." with dissolve
-    $ year += 1
-    $ money += 66000
+    $ money += 90000
     pause 2.0
     call year_over
 
@@ -153,8 +150,7 @@ label aero_boring:
     scene black with fade
     pause 1.0
     show text "Five years passed, and you are starting to get burnt out." with dissolve
-    $ year += 5
-    $ money += (66000 * 5)
+    $ money += (90000 * 5)
     pause 2.0
     show text "You decide to use your hard earned money." with dissolve
     pause 1.0
