@@ -24,7 +24,7 @@ label day1_invest:
     mc "So, the ETF costs $500."
     mc "With the $50,000 I have, in theory I could buy 100 of these ETFs and grow my money by so much!"
     mc "But I still need money for food and stuff..."
-    mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enouhg to live."
+    mc "So I'll probably just buy about 75. I don't want to put too much in, otherwise I won't have enough to live."
     mc "My living expenses run me about $24,000 a year. So I'll need to get a job."
     menu:
         "Should I buy the S&P ETF?"
@@ -84,18 +84,14 @@ label post_sp_buy:
         scene bg home
         with wipeleft
         "Now that my money is invested, I should probably get a job."
-        "Or I could take out loans for a job..."
-        "I've applied to some, but the cost has really been holding me back."
-        "Financial aid could help and then I could take out loans for something better."
+        "Or I could go to college, but i'd have to take out loans..."
         menu:
-            "What should I do?"
+            mc "What should I do?"
             
             "Get a job":
                 jump get_job_with_intro
             
-            "Go to college.":
+            "Go to college":
                 jump degree
 
     return
-
-
