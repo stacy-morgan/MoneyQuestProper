@@ -9,8 +9,10 @@ label wcb_janitor_job:
     jump wcb_janitor_game_loop
 
 label wcb_chef_game_loop:
-    mc "I am a chef now."
-    mc "I am making $20 an hour. Yippee!"
+    hide character animegirl
+    show character lily
+    mc "I am a WcBonalads chef now,"
+    mc "I'm making $20 an hour. Yippee!"
     jump expenses_chef
 
 label wcb_janitor_game_loop:
