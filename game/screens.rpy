@@ -117,8 +117,8 @@ screen money_display():
         vbox:
             spacing 5
             text "Year: {}".format(year) style "money_text"
-            text "Money: ${:,}".format(money) style "money_text"
-            text "Stocks Value: ${:,}".format(calculate_portfolio_value()) style "money_text"
+            text "Money: ${:,.2f}".format(money) style "money_text"
+            text "Stocks Value: ${:,.2f}".format(calculate_portfolio_value()) style "money_text"
 
 style money_text:
     color "#ffffff"
