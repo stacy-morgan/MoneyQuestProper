@@ -14,8 +14,18 @@ label cs_job:
 label cs_game_loop:
     scene bg LearnToCode
     with fade
-    mc "Wow I'm at work...."
-    jump end
+    mc "Wow, I'm at work."
+    mc "Its quite boring, but I get paid $120,000 a year, minus the $24,000 in expenses."
+    jump cs_boring
+
+label cs_boring:
+    scene black with fade
+    pause 1.0
+    show text "Years passed, and you are starting to get burnt out." with dissolve
+    pause 2.0
+    show text "You decide to spend your hard earned money." with dissolve
+    pause 2.0
+    jump bach_choices
 
 label art_job:
     mc "I really want to make art now, but I'm worried that I won't make enough money to pay for an apartment."
@@ -67,5 +77,81 @@ label aerospace_game_loop:
         scene bg rocket_office
         with fade
 
-    mc "I'm at work now!"
-    jump end
+    mc "Wow, I'm at work."
+    mc "Its quite boring, but I get paid $150,000 a year, minus the $24,000 in expenses."
+    jump aero_boring
+
+label aero_boring:
+    scene black with fade
+    pause 1.0
+    show text "Years passed, and you are starting to get burnt out." with dissolve
+    pause 2.0
+    show text "You decide to spend your hard earned money." with dissolve
+    pause 1.0
+    jump bach_choices
+
+label bach_choices:
+    scene bg home
+    mc "I have many choices to make."
+    menu:
+        "Buy mansion ($10,000,000)":
+            jump mansion
+        "Go on vacation ($100,000)":
+            jump vacation
+
+label mansion:
+    scene black with fade
+    pause 1.0
+    show text "Risks: Buying a mansion comes at the risk of property tax and maintenance fees. Additionally, if you get laid off, then foreclosure is a possibility." with dissolve
+    pause 3.0
+    show text "Benefits: If the housing market booms, the house value appreciates, and you can live a happy life." with dissolve
+    pause 3.0
+    scene bg mansion
+    "Buy, rent, or mortgage?"
+    menu:
+        "Buy":
+            $ house = True
+            jump ending_mansion
+        "Rent":
+            jump ending_mansion
+        "Mortgage":
+            jump ending_mansion
+
+label ending_mansion:
+    mc "I live in a mansion now!"
+    scene black with fade
+    pause 1.0
+    show text "A couple of centuries passed..." with dissolve
+    pause 2.0
+    jump retirement
+
+label vacation:
+    scene black with fade
+    pause 1.0
+    show text "Risks: Spending too much results in lower savings for emergencies and you are prioritizing vacation over work."
+    pause 3.0
+    show text "Benefits: Vacation reduces stress and burn out, and you get to record your best memories."
+    pause 3.0
+    scene bg beach_vacation
+    "Should you go on vacation?"
+    menu:
+        "Yes":
+            jump ending_vacation
+        "No":
+            jump ending_vacation2
+
+label ending_vacation:
+    mc "I went on vacation!"
+    scene black with fade
+    pause 1.0
+    show text "A couple of centuries passed..." with dissolve
+    pause 2.0
+    jump retirement
+
+label ending_vacation2:
+    mc "I believe that I should focus on work and saving money."
+    scene black with fade
+    pause 1.0
+    show text "A couple of centuries passed..." with dissolve
+    pause 2.0
+    jump retirement
