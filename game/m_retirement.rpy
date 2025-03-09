@@ -8,9 +8,9 @@ label retirement:
     $ total_assets_str = format_money(total_assets)
     if house:
         jump retireComfortable
-    if total_assets < 10000:
+    if total_assets < 100000:
         jump retireLess10000
-    elif total_assets < 100000:
+    elif total_assets < 1000000:
         jump retireBetween
     else:
         jump retireComfortable
