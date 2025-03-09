@@ -1,18 +1,19 @@
 label invest:
-    $ spy_price = 5000
-    $ wcb_price = 300
-    $ dividend_amt = 0
+    default dividend_amt = 0
+    define fast_dissolve = Dissolve(0.5)
+    define normal_dissolve = Dissolve(1.0)
+    define slow_dissolve = Dissolve(2.0)
 
     mc "Lets buy some juicy stocks and ETFs."
-    scene bg stocks_pc_green
-    with Wipeleft(2)
+    scene bg stocks_up
+    with normal_dissolve
     mc "I don't know much about stocks..."
     mc "I've heard from my grandpa's ramblings that some \"Baldman Socks\" EFT or whatever is good to invest in."
     mc "Or was it ETF?"
     mc "He said it's a good idea to invest in the S&P 500, but there doesn't seem to be a way to do that."
     mc "It says it costs 5,000 dollars to invest? Wow, it must really only be for rich people."
-    scene bg stocks_pc_green
-    with Wipeleft(2)
+    scene bg stocks_up
+    with normal_dissolve
     mc "Ok, it seems like my account setup went through ok."
     mc "All my friends are using Robintrade, so I think I'll set it up with this. "
     mc "Setup went good..."
@@ -22,7 +23,7 @@ label invest:
     mc "So you {i}can't{/i} invest into the S&P 500 and Nasdaq-100 directly? That makes sense."
     mc "With a price of $5,000, it makes sense that you can't buy a lot of these."
     mc "Instead, it seems like we have to use an \"exchange-traded fund\", or ETF."
-    mc "These {i}}track{/i} the price of the market indexes."
+    mc "These {i}track{/i} the price of the market indexes."
     mc "I guess I'll buy some, but I heard investment advisors say that you should diversify a little bit."
     mc "Maybe I'll buy some bonds, but I don't want to put too much money into it right now in case it goes down."
     mc "Because then it would be more of a buying opportunity."
