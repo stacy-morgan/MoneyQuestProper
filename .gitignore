@@ -6,4 +6,5 @@ traceback.txt
 .DS_Store
 .vscode
 *.rpyc
+*.bak
 .vscode
