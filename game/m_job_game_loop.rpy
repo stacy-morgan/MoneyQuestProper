@@ -104,7 +104,7 @@ label wcb_chef_game_loop:
 
     jump expenses
 
-label wcb_janitor_game_loop:
+label wcb_janitor_game_loop:x
     hide character animegirl
     show character lily
     if year - wcb_year_start == 0:
