@@ -134,10 +134,8 @@ label year_over:
 
     mc "My rent is also due now. It cost of living around $24,000 per year."
     if year < 2030:
-        $ year += 1
         $ money -= 24000
     else:
-        $ year += 5
         $ money -= (24000*5)
 
     if money < 0:
