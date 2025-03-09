@@ -139,6 +139,8 @@ label continue_0223:
 
     scene bg home
 
+    $ total_assets = money + calculate_portfolio_value()
+
     menu:
         mc "I have a lot of money now, what should I do with it?"
 
@@ -157,7 +159,7 @@ label continue_0223:
             jump batch_choices_end
         "Keep working":
             jump batch_choices_end
-        "Retire" if money >= 1000000:
+        "Retire" if total_assets >= 1000000:
             jump retirement
 
 label batch_choices_end:
