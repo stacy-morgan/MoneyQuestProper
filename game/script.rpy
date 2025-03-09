@@ -74,7 +74,9 @@ label choice1:
 
         "Retire":
             jump retirement
-
+            
+        "Stacy":
+            jump invest
 label broke_ass_bitch:
     mc "I am out of money!"
     mc "You lose."
