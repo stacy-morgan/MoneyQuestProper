@@ -71,6 +71,8 @@ label retireComfortable:
     show character oldlily
     mc "This should last me a long while, but I still should be cautious."
     mc "I can have a long and relaxing retirement."
-
+    if total_assets > persistent.highscore:
+        $ persistent.highscore = total_assets
     "Lily lived a long a fulfilling life."
+    "High Score: [persistent.highscore]"
     jump end
