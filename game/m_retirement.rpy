@@ -76,5 +76,5 @@ label retireComfortable:
     "Lily lived a long a fulfilling life."
     $ temp = persistent.highscore
     $ temp = format_money(temp)
-    "High Score: $[temp]"
+    "High Score: [temp]"
     jump end
