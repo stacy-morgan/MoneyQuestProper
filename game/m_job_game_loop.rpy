@@ -26,12 +26,8 @@ label expenses_janitor:
     scene black with fade
     pause 1.0
     show text "One year has passed..." with dissolve
-    pause 2.0
-    show text "Yearly savings: $34,320" with dissolve
-    pause 2.0
-    show text "Yearly expenses: $24,000" with dissolve
-    pause 2.0
-    show text "Remaining savings: $10,320" with dissolve
+    $ year += 1
+    $ money += 10320
     pause 2.0
     jump summary_janitor
 
@@ -39,12 +35,8 @@ label expenses_chef:
     scene black with fade
     pause 1.0
     show text "One year has passed..." with dissolve
-    pause 2.0
-    show text "Yearly savings: $41,600" with dissolve
-    pause 2.0
-    show text "Yearly expenses: $24,000" with dissolve
-    pause 2.0
-    show text "Remaining savings: $17,600" with dissolve
+    $ year += 1
+    $ money += 17600
     pause 2.0
     jump summary_chef
 
@@ -79,7 +71,8 @@ label learn_skills:
     with dissolve
     "You have learned high-paying skills."
     "However, it took a couple hours off your job."
-    "Your new yearly earnings is $6,030 after expenses."
+    $ year += 1
+    $ money += 6030
     jump probability_learn_skills
 
 label social_media:
@@ -87,7 +80,8 @@ label social_media:
     with dissolve
     "You try to become a social media influencer."
     "However, it took a couple hours off your job."
-    "Your new yearly earnings is $6,030 after expenses."
+    $ year += 1
+    $ money += 6030
     jump probability_social_media
 
 label learn_skills_c:
@@ -95,7 +89,8 @@ label learn_skills_c:
     with dissolve
     "You have learned high-paying skills."
     "However, it took a couple hours off your job."
-    "Your new yearly earnings is $12,400 after expenses."
+    $ year += 1
+    $ money += 12400
     jump probability_learn_skills_c
 
 label social_media_c:
@@ -103,7 +98,8 @@ label social_media_c:
     with dissolve
     "You have learned high-paying skills."
     "However, it took a couple hours off your job."
-    "Your new yearly earnings is $12,400 after expenses."
+    $ year += 1
+    $ money += 12400
     jump probability_social_media_c
 
 label expenses_janitor_keep:
@@ -127,13 +123,15 @@ label probability_learn_skills:
         pause 2.0
         show text "You return to your normal hours." with dissolve
         pause 2.0
-        show text "On the bright side, you got promoted and are now making $13,440 after expenses." with dissolve
+        show text "On the bright side, you got promoted." with dissolve
+        $ year += 1
+        $ money += 13440
         jump conclusion
     else:
         pause 2.0
         show text "You found a new job with your new skills." with dissolve
-        pause 2.0
-        show text "You are now making $18,740 after expenses." with dissolve
+        $ year += 1
+        $ money += 13440
         pause 2.0
         jump conclusion
 
@@ -150,15 +148,17 @@ label probability_social_media:
         pause 2.0
         show text "You return to your normal hours." with dissolve
         pause 2.0
-        show text "On the bright side, you got promoted and are now making $13,440 after expenses." with dissolve
+        show text "On the bright side, you got promoted." with dissolve
+        $ money += 13440
+        $ year += 1
         pause 2.0
         jump conclusion
     else:
         pause 2.0
         show text "You have become a successful social media influencer." with dissolve
         pause 2.0
-        show text "You are now making $17,740 after expenses." with dissolve
-        pause 2.0
+        $ money += 17740
+        $ year += 1
         jump conclusion
 
 label probability_learn_skills_c:
@@ -174,13 +174,16 @@ label probability_learn_skills_c:
         pause 2.0
         show text "You return to your normal hours." with dissolve
         pause 2.0
-        show text "On the bright side, you got promoted and are now making $21,760 after expenses." with dissolve
+        show text "On the bright side, you got promoted." with dissolve
+        $ money += 21760
+        $ year += 1
+        pause 2.0
         jump conclusion
     else:
         pause 2.0
         show text "You found a new job with your new skills." with dissolve
-        pause 2.0
-        show text "You are now making $22,990 after expenses." with dissolve
+        $ money += 22990
+        $ year += 1
         pause 2.0
         jump conclusion
 
@@ -197,14 +200,16 @@ label probability_social_media_c:
         pause 2.0
         show text "You return to your normal hours." with dissolve
         pause 2.0
-        show text "On the bright side, you got promoted and are now making $21,760 after expenses." with dissolve
+        show text "On the bright side, you got promoted." with dissolve
+        $ money += 21760
+        $ year += 1
         pause 2.0
         jump conclusion
     else:
         pause 2.0
         show text "You have become a successful social media influencer." with dissolve
-        pause 2.0
-        show text "You are now making $21,990 after expenses." with dissolve
+        $ money += 21990
+        $ year += 1
         pause 2.0
         jump conclusion
 
@@ -216,7 +221,7 @@ label conclusion:
     menu:
         "Save money":
             jump emergency
-        "Upgrade lifestyle (Expenses: $30k a year)":
+        "Upgrade lifestyle (Cost: $20,000)":
             jump consequence
 
 label emergency:
@@ -224,7 +229,9 @@ label emergency:
     with dissolve
     mc "I got into a car accident."
     mc "I saved my money for a rainy day and was able to pay for my hospital bills."
-    "Inflation increased by 10%%..."
+    $ money -= 10000
+    $ year += 1
+    "Inflation increased by 5%%..."
     scene black with fade
     "Years passed..."
     pause 1.0
@@ -235,8 +242,10 @@ label emergency:
 label consequence:
     scene bg mansion with fade
     mc "I spent all my money on a new lifestyle."
+    $ money -= 20000
+    $ year += 1
     mc "I have barely any money to spend now."
-    "Inflation increased by 10%%..."
+    "Inflation increased by 5%%..."
     scene black with fade
     "Years passed..."
     pause 1.0
