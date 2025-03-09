@@ -37,15 +37,6 @@ image character animegirl = "chars/AnimeGirl.png"
 image character lily = "chars/Lily.png"
 image character oldlily = "chars/OldLily.png"
 
-# default major = ""
-# default money = 0
-# default year = 2025
-# default job = "none"
-# default house = False
-
-# default spy_price = 500
-# default wcb_price = 150
-
 init python:
     config.overlay_screens.append("money_display")
 
@@ -73,7 +64,7 @@ label start:
     mc "I recently inherited a large amount of money from my great aunt. (+$50,000)"
     mc "What should I do with it?"
 
-    jump debug_choice = 0
+    jump debug_choice
 
 label debug_choice:
     menu:
@@ -90,7 +81,7 @@ label debug_choice:
             jump retirement
             
         "Invest":
-            jump invest
+            jump day1_invest
 
         #"Stacy Year Loop test":
         #   jump year_over_loop
