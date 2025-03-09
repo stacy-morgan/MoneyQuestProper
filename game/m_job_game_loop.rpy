@@ -1,3 +1,7 @@
+$ hasSkillandInfluencer = False
+$ hasSecondaryJob = False
+$ promoted = False
+
 label wcb_chef_job:
     mc "I got the job."
     $ yrs_until_promotion = 2
@@ -230,8 +234,6 @@ label emergency:
     mc "I got into a car accident."
     mc "I saved my money for a rainy day and was able to pay for my hospital bills."
     $ money -= 10000
-    $ year += 1
-    "Inflation increased by 5%%..."
     scene black with fade
     "Years passed..."
     pause 1.0
@@ -241,11 +243,8 @@ label emergency:
 
 label consequence:
     scene bg mansion with fade
-    mc "I spent all my money on a new lifestyle."
+    mc "I spent my money on a new lifestyle."
     $ money -= 20000
-    $ year += 1
-    mc "I have barely any money to spend now."
-    "Inflation increased by 5%%..."
     scene black with fade
     "Years passed..."
     pause 1.0
