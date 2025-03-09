@@ -34,21 +34,22 @@ label wcb_janitor_job:
 label wcb_chef_game_loop:
     hide character animegirl
     show character lily
-    mc "I am a WcBonalds chef now,"
-    mc "I'm making $20 an hour. Yippee!"
+    if year - wcb_year_start == 0:
+        mc "I am a WcBonalds chef now."
+        mc "I'm making $20 an hour. Yippee!"
     jump expenses
 
 label wcb_janitor_game_loop:
     hide character animegirl
     show character lily
-    mc "Yay, I'm a WcBonalads janitor now *dies inside*"
-    mc "I am making $16.50 an hour."
+    if year - wcb_year_start == 0:
+        mc "Yay, I'm a WcBonalads janitor now *dies inside*"
+        mc "I am making $16.50 an hour."
     jump expenses
 
 label expenses:
     scene black with fade
-    pause 1.0
-    show text "One year has passed..." with dissolve
+    scene bg home
     $ year += 1
     if year - wcb_year_start == 2:
         $ hs_job_level = 1
@@ -59,6 +60,8 @@ label expenses:
     $ wage = wage_calc()
     $ money += salary_calc(wage)
     pause 2.0
+    call year_over
+    jump wcb_chef_game_loop
 
 
 label conclusion:
