@@ -105,7 +105,7 @@ init python:
                 total_portfolio_value += quantity * spy_price
             elif stock == 'WCB':
                 total_portfolio_value += quantity * wcb_price
-        return round(total_portfolio_value, 2)
+        return round(total_portfolio_value)
 
 screen money_display():
     zorder 100  # This ensures it appears on top of other elements
@@ -117,7 +117,7 @@ screen money_display():
         vbox:
             spacing 5
             text "Year: {}".format(year) style "money_text"
-            text "Money: ${:,.2f}".format(money) style "money_text"
+            text "Money: ${:,.0f}".format(money) style "money_text"
     if calculate_portfolio_value() > 0:
         frame:
             xalign 0.0
@@ -126,11 +126,12 @@ screen money_display():
             ypadding 5
             vbox:
                 spacing 5
-                text "Stocks Value: ${:,.2f}".format(calculate_portfolio_value()) style "money_text"
+                text "Total Stocks Value: ${:,.0f}".format(calculate_portfolio_value()) style "money_text"
                 for stock, quantity in held_stocks.items():
                     if quantity > 0:
-                        $ stock_value = quantity * (spy_price if stock == 'SPY' else wcb_price)
-                        text "{}: {} shares (${:,.2f})".format(stock, quantity, stock_value) style "money_text"
+                        $ stock_price = (spy_price if stock == 'SPY' else wcb_price)
+                        # $ stock_value = quantity * stock_price
+                        text "{}: {} shares at ${:,.0f} per share".format(stock, quantity, stock_price) style "money_text"
 
 style money_text:
     color "#ffffff"
