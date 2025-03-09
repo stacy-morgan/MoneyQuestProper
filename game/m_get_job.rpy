@@ -57,5 +57,10 @@ label jji_b:
     jump get_job
 
 label wcb_chef_job_interview:
-    e "Hi, I'm Eileen! I'll be interviewing you today."
+    show character animegirl:
+        xpos 0.5  ypos 0
+    qqq "Hi, I'm Eileen! I'll be interviewing you today."
+    e "The question is..."
+    menu:
+        e "How do you put the fries in the bag?"
     jump end
