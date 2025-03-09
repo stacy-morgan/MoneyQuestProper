@@ -45,10 +45,6 @@ init python:
 # The game starts here.
 
 label start:
-    if peristent.highscore == None:
-        $ persistent.highscore = 0
-    if persistent.highscore != 0:
-        "High score: $[persistent.highscore]"
     default debug = False
     default noob = True
     default salary = 0
