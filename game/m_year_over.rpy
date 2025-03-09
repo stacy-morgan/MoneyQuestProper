@@ -24,7 +24,7 @@ label year_over:
         news_reporter "In finance news, the S&P 500 has gone up by 11\% since last year. Great returns!"
         news_reporter "At the beginning of the year, it was at $[spy_price]."
         $ spy_price = round(spy_price*1.11)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 10\% increase in stock value this year."
@@ -35,9 +35,9 @@ label year_over:
     if year == 2027:
         news_reporter "In finance news, the S&P 500 has gone up by 9.2\% since last year. Great returns!"
         news_reporter "Although slightly below last year, we really can't complain."
-        news_reporter "At the beginning of the year, it was at [spy_price]."
+        news_reporter "At the beginning of the year, it was at $[spy_price]."
         $ spy_price = round( spy_price*1.092)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 9\% increase in stock value this year."
@@ -48,9 +48,9 @@ label year_over:
     if year == 2028:
         news_reporter "In finance news, the S&P 500 has gone up by 9.5\% since last year. Great returns!"
         news_reporter "This growth outpaced last year very slightly, but only by about 0.3\%."
-        news_reporter "At the beginning of the year, it was at [spy_price]."
+        news_reporter "At the beginning of the year, it was at $[spy_price]."
         $ spy_price = round(spy_price*1.095)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 4\% increase in stock value this year."
@@ -61,9 +61,9 @@ label year_over:
     if year == 2029:
         news_reporter "In finance news, the S&P 500 has gone up by 8.1\% since last year. Not as great, but it's still outpacing inflation."
         news_reporter "This growth is lower than the previous two years, below 2028 by 1.4\%."
-        news_reporter "At the beginning of the year, it was at [spy_price]."
+        news_reporter "At the beginning of the year, it was at $[spy_price]."
         $ spy_price = round( spy_price*1.081)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "Another great year for investors worldwide!"
 
         news_reporter "In other news, WcBonalds reports a 1\% increase in stock value this year."
@@ -76,9 +76,9 @@ label year_over:
         news_reporter "In finance news, the S&P 500 has had a terrible year."
         news_reporter "Losses have been reported to be up to 28\% since last year."
         news_reporter "Fears about global trade and technology uncertainty have led to a steep decline in trust and profitability. "
-        news_reporter "At the beginning of the year, it was at [spy_price]."
+        news_reporter "At the beginning of the year, it was at $[spy_price]."
         $ spy_price = round( spy_price*0.72)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "We will recover!"
         news_reporter "Experts may consider this a buying opportunity, ready to pounce later for higher profits."
         news_reporter "In other news, WcBonalds reports a 1.3\% decrease in stock value this year."
@@ -90,9 +90,9 @@ label year_over:
     if year == 2035:
         news_reporter "In finance news, the S&P 500 has gone up by 9.3\% since last year. The market is recovering."
         news_reporter "Since the recession, it has gone back up by approximately 89\%."
-        news_reporter "From the recession, it was at [spy_price]."
+        news_reporter "From the recession, it was at $[spy_price]."
         $ spy_price = round(spy_price*1.89)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "It's been a solid 5 years for the market's recovery, and I, for one, couldn't be happier."
 
         news_reporter "In other news, WcBonalds reports a 37\% increase in stock value in the last 5 years."
@@ -103,9 +103,9 @@ label year_over:
     if year == 2040:
         news_reporter "In finance news, the S&P 500 has gone up by 10.3\% since last year. The market is really climbing back up."
         news_reporter "In the last 5 years, it's up about 76\%."
-        news_reporter "From the recession, it was at [spy_price]."
+        news_reporter "From the recession, it was at $[spy_price]."
         $ spy_price = round(spy_price*1.76)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
         news_reporter "Not the highest growth, but it's still a way to double your money."
 
         news_reporter "In other news, WcBonalds reports a 62\% increase in stock value in the last 5 years."
@@ -117,9 +117,9 @@ label year_over:
     if year == 2050:
         news_reporter "In finance news, the S&P 500 has gone up by 11\% since last year. The market is doing great!"
         news_reporter "In the last 10 years, it's doubled."
-        news_reporter "10 years ago, it was at [spy_price]."
+        news_reporter "10 years ago, it was at $[spy_price]."
         $ spy_price = round(spy_price*2)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
 
         news_reporter "In other news, WcBonalds reports a 33\% increase in stock value in the last 10 years."
         $ wcb_price = round(wcb_price*1.33)
@@ -130,9 +130,9 @@ label year_over:
         news_reporter "In finance news, the S&P 500 has gone up by 10\% since last year. The market continues to amaze!"
         news_reporter "In the last 10 years, it's almost doubled again."
         news_reporter "So close to doubling! It's up 96\%."
-        news_reporter "10 years ago, it was at [spy_price]."
+        news_reporter "10 years ago, it was at $[spy_price]."
         $ spy_price = round(spy_price*1.96)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
 
         news_reporter "In other news, WcBonalds reports a 19\% decrease in stock value in the last 10 years."
         $ wcb_price = round(wcb_price*0.081)
@@ -144,9 +144,9 @@ label year_over:
         news_reporter "In finance news, the S&P 500 has gone up by 12\% since last year. It's certianly better than average year!"
         news_reporter "In the last 10 years, it's more than doubled."
         news_reporter "So close to doubling! It's up 103\%."
-        news_reporter "10 years ago, it was at [spy_price]."
+        news_reporter "10 years ago, it was at $[spy_price]."
         $ spy_price = round(spy_price*2.03)
-        news_reporter "It is currently trading at [spy_price]."
+        news_reporter "It is currently trading at $[spy_price]."
 
         news_reporter "In other news, WcBonalds reports a 5.9\% increase in stock value in the last 10 years."
         $ wcb_price = round(wcb_price*1.059)
