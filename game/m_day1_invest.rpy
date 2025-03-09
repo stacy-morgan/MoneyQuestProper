@@ -97,7 +97,7 @@ label post_sp_buy:
     mc "So for the amount of stock you're holding, you can get paid 2.2\% of that every year."
     mc "But based on these historical S&P graphs, the returns are a lot more per year."
     mc "And the dividends can be risky because they can change the dividend return or the stock could be more volatile than the market as a whole."
-    mc "It's also good to just diversify a llittle bit."
+    mc "It's also good to just diversify a little bit."
     mc "Seems like WcBonald's stock costs [wcb_price]."
     mc "It would probably be safe to get a bit of another stock, and dividends aren't bad too."
     menu:
